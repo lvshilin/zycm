@@ -11,9 +11,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
-	"appid": "wx3571ddcf3a406f27",
-	"projectname": "huanan",
+	"libVersion": "2.2.0",
+	"appid": "wxf9f59a5bf3fecdfa",
+	"projectname": "zycm",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

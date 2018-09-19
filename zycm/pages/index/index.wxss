@@ -1,0 +1,7 @@
+.call_icon image{
+  position: fixed;
+  width: 60rpx;
+  height: 60rpx;
+  bottom: 30rpx;
+  right: 20rpx;
+}

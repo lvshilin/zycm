@@ -1,0 +1,18 @@
+<view class="weui-flex">
+  <view class="weui-flex__item">
+    <view class="placeholder">{{typeTitle}}</view>
+  </view>
+</view>
+<view class="text">
+   {{typeText}}
+</view>
+<view class="weui-flex">
+  <view class="weui-flex__item">
+    <view class="placeholder">课程内容概览</view>
+  </view>
+</view>
+<view class="context" wx:for="{{studyList}}">
+  {{item}}
+</view>
+
+

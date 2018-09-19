@@ -1,0 +1,45 @@
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">姓名</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input id="username" bindinput='getUsername' class="weui-input" placeholder="请输入真实姓名" />
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">手机</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input id="phone" bindinput='getPhone' class="weui-input" placeholder="请输入手机号码" />
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">qq</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input id="qq" bindinput='getQq' class="weui-input" placeholder="请输入qq" />
+    </view>
+  </view>
+</view>
+<view class="weui-toptips weui-toptips_warn" wx:if="{{joinUsTap}}">错误提示</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="joinUsTap">提交</button>
+</view>
+
+<view class="weui-flex__item">
+  <view class="placeholder">报名须知</view>
+</view>
+<view class="text">
+  1.坚持学习制度，吃苦耐劳
+</view>
+<view class="text">
+  2.团结友爱，互相帮助
+</view>
+<view class="text">
+  3.思想端正，认真学习
+</view>
