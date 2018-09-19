@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/push/push",
+    "pages/newPush/newPush",
+    "pages/user/user",
+    "pages/storeList/storeList",
+    "pages/pushDetail/pushDetail",
+    
+    "pages/storeDetail/storeDetail",
+    "pages/index/index"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "掌上桦南",
+    "navigationBarTextStyle":"black"
+  },
+    "tabBar": {
+      "color": "#2c2c2c",
+      "selectedColor":"#e05013",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首🔥页",
+          "iconPath": "pic/index/home.png",
+          "selectedIconPath": "pic/index/home-s.png"
+        },
+        {
+          "pagePath": "pages/push/push",
+          "text": "免费🔥发布",
+          "iconPath": "pic/index/push.png",
+          "selectedIconPath": "pic/index/push-s.png"
+        },
+        {
+          "pagePath": "pages/storeList/storeList",
+          "text": "附近🔥商圈",
+          "iconPath": "pic/index/store.png",
+          "selectedIconPath": "pic/index/store-s.png"
+        },
+        {
+          "pagePath": "pages/user/user",
+          "text": "个人🔥中心",
+          "iconPath": "pic/index/user.png",
+          "selectedIconPath": "pic/index/user-s.png"
+        }
+      ]
+    }
+}

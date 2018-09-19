@@ -1,0 +1,63 @@
+.store-detail-name{
+  padding-top: 10rpx;
+  text-align: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid #cdcdcd;
+}
+.store-detail-address{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #cdcdcd;
+}
+.store-detail-address-img{
+  width: 5%;
+  padding: 20rpx;
+}
+.store-detail-address-logo{
+  height: 40rpx;
+  width: 40rpx;
+  padding: 5rpx;
+}
+.store-detail-address-text{
+  padding: 10rpx;
+  font-size: 30rpx;
+}
+.store-detail-desc{
+  padding-top: 10rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #cdcdcd;
+}
+.store-detail-desc-img{
+  width: 90%;
+  height: 400rpx;
+}
+.store-detail-bottom{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  background-color: #e6e6e6;
+  border-top: 1rpx solid #dbdbdb;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+}
+.store-detail-bottom-img{
+  text-align: center;
+  width: 20%;
+}
+.store-detail-bottom-logo{
+  height: 88rpx;
+  width: 88rpx;
+}
+.store-detail-bottom-info{
+  width: 40%;
+}
+.info-btn{
+  height: 60rpx;
+  margin: 15rpx;
+  border: 1rpx solid #d81e06;
+  background-color:#d81e06;
+  border-radius: 40rpx;
+  text-align: center;
+  color: white;
+}

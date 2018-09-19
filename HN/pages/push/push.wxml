@@ -1,0 +1,22 @@
+<scroll-view scroll-x class="scroll-header">
+  <view class="{{item.menuCode == catalogSelect ? 'scroll-active':'scroll-item'}}" bindtap='hoverClick' data-vtext='{{item.menuCode}}' wx:for="{{menuList}}">
+    <text class="{{item.menuCode == catalogSelect ? 'scroll-active-text':'scroll-text'}}" data-vtext='{{item.menuCode}}'>{{item.menuName}}</text>
+  </view>
+</scroll-view>
+
+<view class="push-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-id='{{item.id}}' wx:for="{{pushList}}" bindtap='pushDetailPage'>
+  <view class='push-img'>
+    <image class='pushImg' src='../../pic/storeList/dianpu.jpg'></image>
+  </view>
+  <view class='push-detail'>
+    <view class='push-title'>
+      <text style='color:red;'>{{item.dictText}}#</text>{{item.pushTitle}}</view>
+    <view class='push-text'>{{item.pushDetail}}</view>
+    <view class="push-num">{{item.createTimeStr}}</view>
+  </view>
+</view>
+
+<!-- 发布固定图标 -->
+<view class="push_icon" bindtap='push'>
+  <image src="../../pic/push/fabu.png"></image>
+</view>

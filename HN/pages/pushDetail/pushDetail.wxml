@@ -1,0 +1,6 @@
+<view class='push-detail-head'>
+  <view class='push-user-img'>
+    <image class='pushUserImg' src='../../pic/storeList/dianpu.jpg'></image>
+  </view>
+  <view class='pushUserName'>林业大道</view>
+</view>

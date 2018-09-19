@@ -1,0 +1,40 @@
+<view class="user-back" wx:if="{{hasUserInfo}}">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<view class="user-back" wx:else>
+  <image class="userinfo-avatar" src="../../pic/nologin.gif" background-size="cover"></image>
+  <button class="userinfo-btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
+
+
+  <view class="user-menu">
+    <view style='width:15%;text-align: center;'>
+    <image class="user-menu-img" src='../../pic/user/fatie.png'></image>
+    </view>
+    <view class="user-menu-text">我发布的</view>
+    <view style='width:15%;'>
+    <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
+  </view>
+
+  <view class="user-menu">
+    <view style='width:15%;text-align: center;'>
+    <image class="user-menu-img" src='../../pic/user/huitie.png'></image>
+    </view>
+    <view class="user-menu-text">我回复的</view>
+    <view style='width:15%;'>
+    <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
+  </view>
+
+  <view class="user-menu">
+    <view style='width:15%;text-align: center;'>
+    <image class="user-menu-img" src='../../pic/user/shoucang.png'></image>
+    </view>
+    <view class="user-menu-text">我收藏的</view>
+    <view style='width:15%;'>
+    <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
+  </view>
+ 

@@ -1,0 +1,83 @@
+.scroll-header{
+display: flex;
+white-space: nowrap; 
+border-top: 4rpx solid #e6e6e6;
+border-bottom: 4rpx solid #e6e6e6;
+}
+.scroll-item{
+margin: 4rpx;
+height:80rpx;
+width:170rpx;
+display: inline-block; 
+text-align: center;
+}
+.scroll-active{
+margin: 4rpx;
+height:80rpx;
+width:170rpx;
+background-color:#1296db;
+display: inline-block; 
+text-align: center;
+}
+.scroll-active-text{
+  line-height: 2.2;
+  font-size: 35rpx;
+  color: white;
+}
+.scroll-text{
+  line-height: 2.2;
+  font-size: 35rpx;
+}
+.push-item{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+.push-img{
+  width: 10%;
+  padding: 20rpx;
+}
+.pushImg{
+  height: 80rpx;
+  width: 80rpx;
+}
+.push-detail{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-top: 20rpx;
+  padding-right: 20rpx;
+}
+.push-title{
+  color: black;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.push-text{
+  color: gray;
+  line-height: 1.2;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.push-num{
+   color: black;
+   font-size: 25rpx;
+}
+.push_icon image{
+  position: fixed;
+  width: 88rpx;
+  height: 88rpx;
+  bottom: 30rpx;
+  right: 20rpx;
+}
+
+
+
