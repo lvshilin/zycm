@@ -1,43 +1,18 @@
-// pages/storeDetail/storeDetail.js
+// pages/myPush/myPush.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    indexUrls: [
-      "../../pic/index/1.jpg",
-      "../../pic/index/2.jpg"
-    ],
-    isSave: false,
-    uuid: ''
-  },
-  shoucang: function(){
-      console.log(this.data.uuid);
-    if (this.data.isSave){
-      this.setData({
-        isSave: false
-      })
-      wx.showToast({
-        title: '取消收藏成功',
-      })
-    }else{
-      this.setData({
-        isSave: true
-      })
-      wx.showToast({
-        title: '收藏成功',
-      })
-    }
-      
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.uuid);
-    this.data.uuid = options.uuid;
+  
   },
 
   /**

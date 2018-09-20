@@ -1,14 +1,16 @@
 {
   "pages":[
-    "pages/push/push",
-    "pages/newPush/newPush",
     "pages/user/user",
+    "pages/myPush/myPush",
+    "pages/myLike/myLike",
+    "pages/push/push",
+    "pages/mySave/mySave",
+    "pages/newPush/newPush",
+ 
     "pages/storeList/storeList",
     "pages/pushDetail/pushDetail",
-    
     "pages/storeDetail/storeDetail",
     "pages/index/index"
-    
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,3 +1,9 @@
+<view class="searchDiv">
+  <view class="searchText">
+    <input class='searchInput' placeholder="请输入要搜索的标题" bindinput="searchInput"></input>
+  </view>
+  <image bindtap='search' class='searchIoc' src='../../pic/search.png'></image>
+</view>
 <scroll-view scroll-x class="scroll-header">
   <view class="{{item.menuCode == catalogSelect ? 'scroll-active':'scroll-item'}}" bindtap='hoverClick' data-vtext='{{item.menuCode}}' wx:for="{{menuList}}">
     <text class="{{item.menuCode == catalogSelect ? 'scroll-active-text':'scroll-text'}}" data-vtext='{{item.menuCode}}'>{{item.menuName}}</text>
@@ -12,7 +18,9 @@
     <view class='push-title'>
       <text style='color:red;'>{{item.dictText}}#</text>{{item.pushTitle}}</view>
     <view class='push-text'>{{item.pushDetail}}</view>
-    <view class="push-num">{{item.createTimeStr}}</view>
+    <view class="push-num">{{item.createTimeStr}}
+      <text decode="{{true}}" space="{{true}}" class='push-huifu'>&nbsp;234评论&nbsp;</text>
+    </view>
   </view>
 </view>
 

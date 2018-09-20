@@ -1,0 +1,38 @@
+<view class="my-save-div">
+  <view class="my-save-imgDiv">
+    <image class="my-save-img" src='../../pic/storeList/dianpu.jpg'></image>
+  </view>
+  <view class="my-save-detail">
+    <view style=' font-size: 30rpx;'>林业局电信营业厅</view>
+    <view style=' font-size: 25rpx;'>3人收藏了本店|818km</view>
+  </view>
+  <view class="my-save-btn" >
+    <image bindtap='cancelSave' src='../../pic/quxiaoshoucang.png'></image>
+  </view>
+</view>
+
+<view class="my-save-div">
+  <view class="my-save-imgDiv">
+    <image class="my-save-img" src='../../pic/storeList/dianpu.jpg'></image>
+  </view>
+  <view class="my-save-detail">
+    <view style=' font-size: 30rpx;'>林业局电信营业厅</view>
+    <view style=' font-size: 25rpx;'>3人收藏了本店|818km</view>
+  </view>
+  <view class="my-save-btn" >
+    <image bindtap='cancelSave' src='../../pic/quxiaoshoucang.png'></image>
+  </view>
+</view>
+
+<view class="my-save-div">
+  <view class="my-save-imgDiv">
+    <image class="my-save-img" src='../../pic/storeList/dianpu.jpg'></image>
+  </view>
+  <view class="my-save-detail">
+    <view style=' font-size: 30rpx;'>林业局电信营业厅</view>
+    <view style=' font-size: 25rpx;'>3人收藏了本店|818km</view>
+  </view>
+  <view class="my-save-btn" >
+    <image bindtap='cancelSave' src='../../pic/quxiaoshoucang.png'></image>
+  </view>
+</view>

@@ -1,43 +1,23 @@
-// pages/storeDetail/storeDetail.js
+// pages/mySave/mySave.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    indexUrls: [
-      "../../pic/index/1.jpg",
-      "../../pic/index/2.jpg"
-    ],
-    isSave: false,
-    uuid: ''
+  
   },
-  shoucang: function(){
-      console.log(this.data.uuid);
-    if (this.data.isSave){
-      this.setData({
-        isSave: false
-      })
-      wx.showToast({
-        title: '取消收藏成功',
-      })
-    }else{
-      this.setData({
-        isSave: true
-      })
-      wx.showToast({
-        title: '收藏成功',
-      })
-    }
-      
+  cancelSave: function(){
+    wx.showModal({
+      title: '请确认?',
+      content: '点击将取消收藏该店铺',
+    })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.uuid);
-    this.data.uuid = options.uuid;
+  
   },
 
   /**

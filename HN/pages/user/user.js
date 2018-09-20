@@ -39,6 +39,7 @@ Page({
         }
       })
     }
+ 
 
 
 
@@ -71,7 +72,9 @@ Page({
   onReady: function() {
 
   },
-
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -127,4 +130,19 @@ Page({
       console.log('用户拒绝了授权');
     }
   },
+  toMyPush: function(){
+    wx.navigateTo({
+      url: '../../pages/myPush/myPush',
+    })
+  },
+  toMySave: function(){
+    wx.navigateTo({
+      url: '../../pages/mySave/mySave',
+    })
+  },
+  toMyLike: function () {
+    wx.navigateTo({
+      url: '../../pages/myLike/myLike',
+    })
+  }
 })

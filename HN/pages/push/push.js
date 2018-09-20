@@ -28,7 +28,8 @@ Page({
       }
     ],
     pushList:[],
-    catalogSelect: 0,//判断是否选中
+    catalogSelect: 0,//判断是否选中,
+    inputVal:''
   },
   hoverClick: function(e){
     console.log(e.target.dataset.vtext);
@@ -44,6 +45,26 @@ Page({
       method: 'POST',
       data: {
         pushType: e.target.dataset.vtext,
+      },
+      success: function (res) {
+        console.log(res);
+        wx.hideLoading();
+        that.setData({
+          pushList: res.data.data
+        })
+      }
+    })
+  },
+  search: function(){
+    wx.showLoading({
+      title: '加载中',
+    });
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8084/zycm-we/push/queryPushListBySearch.do',
+      method: 'POST',
+      data: {
+        searchText: that.data.inputVal,
       },
       success: function (res) {
         console.log(res);
@@ -99,6 +120,12 @@ Page({
         })
       }
     })
+  },
+  searchInput: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
+    console.log(this.data.inputVal);
   },
 
   /**

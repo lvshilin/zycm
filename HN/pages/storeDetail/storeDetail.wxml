@@ -7,34 +7,35 @@
   </block>
 </swiper>
 <view class='store-detail-name'>
-    烧烤店
+  烧烤店
 </view>
 <view class='store-detail-address'>
   <view class='store-detail-address-img'>
     <image class='store-detail-address-logo' src='../../pic/address.png'></image>
   </view>
-   <view class='store-detail-address-text'>黑龙江省佳木斯市桦南县林业局</view>
+  <view class='store-detail-address-text'>黑龙江省佳木斯市桦南县林业局</view>
 </view>
 
 <view class='store-detail-desc'>
-    -- 商家环境 --
-    <view>
-      <image class='store-detail-desc-img' src='../../pic/index/1.jpg'></image>
-      <image class='store-detail-desc-img' src='../../pic/index/2.jpg'></image>
-    </view>
+  -- 商家环境 --
+  <view>
+    <image class='store-detail-desc-img' src='../../pic/index/1.jpg'></image>
+    <image class='store-detail-desc-img' src='../../pic/index/2.jpg'></image>
+  </view>
 </view>
 <view style='height:100rpx;'></view>
 <view class="store-detail-bottom">
   <view class='store-detail-bottom-img'>
-      <image bindtap='shoucang' class='store-detail-bottom-logo' src='../../pic/shoucang.png'></image>
+    <image bindtap='shoucang' class='store-detail-bottom-logo' src='../../pic/shoucang2.png' wx:if="{{isSave}}"></image>
+    <image bindtap='shoucang' class='store-detail-bottom-logo' src='../../pic/shoucang1.png' wx:else></image>
   </view>
   <view class='store-detail-bottom-img'>
-      <image class='store-detail-bottom-logo' src='../../pic/call.png'></image>
+    <image class='store-detail-bottom-logo' src='../../pic/call.png'></image>
   </view>
   <view class='store-detail-bottom-img'>
-      <image class='store-detail-bottom-logo' src='../../pic/call.png'></image>
+    <image class='store-detail-bottom-logo' src='../../pic/pinglun.png'></image>
   </view>
   <view class='store-detail-bottom-info'>
-      <view class='info-btn'>进入店铺</view>
+    <view class='info-btn'>进入店铺</view>
   </view>
 </view>

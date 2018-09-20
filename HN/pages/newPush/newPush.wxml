@@ -1,4 +1,4 @@
-<view class="weui-cells__title">表单</view>
+<view class="weui-cells__title">帖子发布</view>
 <view class="weui-cells weui-cells_after-title">
   <view class="weui-cell weui-cell_input">
     <view class="weui-cell__hd">
@@ -23,7 +23,7 @@
   </view>
 </view>
 
-<view class="weui-cells__title">文本域</view>
+<view class="weui-cells__title">请遵守网络文明用语</view>
 <view class="weui-cells weui-cells_after-title">
   <view class="weui-cell">
     <view class="weui-cell__bd">

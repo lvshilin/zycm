@@ -1,3 +1,27 @@
+.searchDiv{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  justify-content: center;
+}
+.searchText{
+  width: 80%;
+  background-color:#e6e6e6;
+  border-radius: 20rpx;
+  margin: 10rpx;
+}
+.searchInput{
+  margin-top: 5rpx;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+  width: 80%; 
+}
+.searchIoc{
+  margin-top: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
 .scroll-header{
 display: flex;
 white-space: nowrap; 
@@ -18,6 +42,7 @@ width:170rpx;
 background-color:#1296db;
 display: inline-block; 
 text-align: center;
+border-radius: 10rpx;
 }
 .scroll-active-text{
   line-height: 2.2;
@@ -32,6 +57,7 @@ text-align: center;
   display: flex;
   flex-direction: row;
   height: auto;
+  border-bottom: 2rpx solid #e6e6e6;
 }
 .push-img{
   width: 10%;
@@ -45,7 +71,7 @@ text-align: center;
   display: flex;
   flex-direction: column;
   width: 90%;
-  padding-top: 20rpx;
+  padding-top: 8rpx;
   padding-right: 20rpx;
 }
 .push-title{
@@ -70,6 +96,10 @@ text-align: center;
 .push-num{
    color: black;
    font-size: 25rpx;
+}
+.push-huifu{
+  background-color: rebeccapurple;
+  color: white;
 }
 .push_icon image{
   position: fixed;
