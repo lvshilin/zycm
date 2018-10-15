@@ -47,4 +47,21 @@ page{
   height: 70rpx;
   width: 70rpx;
 }
+.signMenu{
+  height: 150rpx;
+  width: 100%;
+  background-color:white;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+.sign-menu-item{
+  width: 50%;
+  text-align: center;
+}
+.sign-menu-img{
+  margin-top: 25rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
 

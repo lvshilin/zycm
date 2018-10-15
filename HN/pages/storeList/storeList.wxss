@@ -1,30 +1,63 @@
-.store-head{
+.searchDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  justify-content: center;
+}
+
+.searchText {
+  width: 80%;
+  background-color: #e6e6e6;
+  border-radius: 20rpx;
+  margin: 10rpx;
+}
+
+.searchInput {
+  margin-top: 5rpx;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+  width: 80%;
+}
+
+.searchIoc {
+  margin-top: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.store-head {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-.store-item{
+
+.store-item {
   display: flex;
   flex-direction: row;
   height: 200rpx;
   border-bottom: 2rpx solid #e6e6e6;
 }
-.store-img{
+
+.store-img {
   width: 20%;
   padding: 20rpx;
 }
-.storeImg{
+
+.storeImg {
   height: 160rpx;
   width: 160rpx;
 }
-.store-detail{
+
+.store-detail {
   display: flex;
   flex-direction: column;
   width: 60%;
   padding-top: 10rpx;
   padding-left: 20rpx;
 }
-.store-title{
+
+.store-title {
   color: red;
   font-size: 25rpx;
   overflow: hidden;
@@ -33,7 +66,8 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
-.store-address{
+
+.store-address {
   color: gray;
   line-height: 1.2;
   font-size: 25rpx;
@@ -43,18 +77,28 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
-.store-num{
-   color: white;
-   font-size: 25rpx;
-   background-color: rebeccapurple;
+
+.store-num {
+  color: white;
+  font-size: 25rpx;
+  background-color: rebeccapurple;
 }
-.store-logo{
+
+.store-logo {
   width: 20%;
   text-align: center;
- 
 }
-.store-go{
+
+.store-go {
   width: 80rpx;
   height: 80rpx;
   margin-top: 60rpx;
+}
+
+.store-type {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  border-top: 4rpx solid #e6e6e6;
+  border-bottom: 4rpx solid #e6e6e6;
 }

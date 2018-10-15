@@ -4,14 +4,14 @@ const app = getApp()
 
 Page({
   data: {
-    pro1: "./pic/javaee.jpg",
-    pro2: "./pic/web.jpg",
-    pro3: "./pic/mysql.jpg",
-    pro4: "./pic/javawork.jpg",
-    pro5: "./pic/wechat.jpg",
+    pro1: "../../static/index/javaee.jpg",
+    pro2: "../../static/index/web.jpg",
+    pro3: "../../static/index/mysql.jpg",
+    pro4: "../../static/index/javawork.jpg",
+    pro5: "../../static/index/wechat.jpg",
     indexUrls:[
-      "./pic/back1.jpg",
-      "./pic/back2.jpg"
+      "../../static/index/back1.jpg",
+      "../../static/index/back2.jpg"
     ],
     userInfo: {},
     hasUserInfo: false,

@@ -4,7 +4,7 @@
     <view class="weui-panel__hd">企业后台管理系统(PC端)</view>
     <view class="weui-panel__hd">游客访问地址：*********</view>
     <view class="placeholder">
-      <image src='./pic/admin.png' style='margin-top:10px;'></image>
+      <image src='../../static/product/admin.png' style='margin-top:10px;'></image>
     </view>
   </view>
 </view>
@@ -14,7 +14,7 @@
     <view class="weui-panel__hd">微信小程序(移动端)</view>
     <view class="weui-panel__hd">游客访问地址：本站</view>
     <view class="placeholder">
-      <image src='./pic/wechat.png' style='margin-top:10px;'></image>
+      <image src='../../static/product/wechat.png' style='margin-top:10px;'></image>
     </view>
   </view>
 </view>
