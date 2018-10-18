@@ -1,3 +1,10 @@
+.menuDiv{
+  margin:2%;
+  height: 180rpx;
+  width: 96%;
+  border: 1rpx solid #e6e6e6;
+  border-radius: 25rpx;
+}
 .indexMenuDiv1{
   display: flex;
   flex-direction: row;

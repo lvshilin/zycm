@@ -25,8 +25,60 @@
 }
 .menuDiv{
   margin:2%;
-  height: 400rpx;
+  height: auto;
   width: 96%;
   border: 1rpx solid #e6e6e6;
   border-radius: 25rpx;
+}
+.indexMenuDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.indexMenu{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 150rpx;
+  align-items: center;
+  text-align: center;
+  font-size: 30rpx;
+  color: #e05013;
+}
+.indexMenuLogo{
+  width: 81rpx;
+  height: 81rpx;
+}
+.itemList{
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+.itemDiv{
+  width: 50%;
+  height: 400rpx;
+  float: left;
+  margin-top: 15rpx;
+}
+.itemBorder{
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx;
+  height: 400rpx;
+  border: 1rpx solid #e6e6e6;
+  align-items: center;
+}
+.itemDiv image{
+  margin-top: 10rpx;
+  width:90%;
+  height: 300rpx;
+}
+.itemText{
+  font-size: 30rpx;
+}
+.wenzhang{
+  margin: 15rpx;
+  width: 80rpx;
+  height: 80rpx;
 }

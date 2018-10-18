@@ -5,32 +5,34 @@
     </swiper-item>
   </block>
 </swiper>
-<view class='indexMenuDiv1'>
-  <view class='indexMenu' bindtap='queryType' data-type='dtqz'>
-    <image class='indexMenuLogo' src='../../pic/index/datingqiuzhu.png'></image>
-    <view>打听求助</view>
-  </view>
-  <view class='indexMenu'>
-    <image class='indexMenuLogo' src='../../pic/index/qiuzhizhaopin.png'></image>
-    <view>求职招聘</view>
-  </view>
-  <view class='indexMenu'>
-    <image class='indexMenuLogo' src='../../pic/index/ershouxianzhi.png'></image>
-    <view>二手闲置</view>
-  </view>
-  <view class='indexMenu'>
-    <image class='indexMenuLogo' src='../../pic/index/jiaoliuhudong.png'></image>
-    <view>交流互动</view>
+<view class='menuDiv'>
+  <view class='indexMenuDiv1'>
+    <view class='indexMenu' bindtap='queryType' data-type='dtqz'>
+      <image class='indexMenuLogo' src='../../pic/index/datingqiuzhu.png'></image>
+      <view>打听求助</view>
+    </view>
+    <view class='indexMenu'>
+      <image class='indexMenuLogo' src='../../pic/index/qiuzhizhaopin.png'></image>
+      <view>求职招聘</view>
+    </view>
+    <view class='indexMenu'>
+      <image class='indexMenuLogo' src='../../pic/index/ershouxianzhi.png'></image>
+      <view>二手闲置</view>
+    </view>
+    <view class='indexMenu'>
+      <image class='indexMenuLogo' src='../../pic/index/jiaoliuhudong.png'></image>
+      <view>交流互动</view>
+    </view>
   </view>
 </view>
-
 <view class="weui-panel__bd">
   <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap='postDetail'>
     <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
       <image class="weui-media-box__thumb" src="{{icon60}}" />
     </view>
     <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-      <view class="weui-media-box__title" style='font-size:25rpx;'><text style='color:red;'>打听求助#</text>标题一</view>
+      <view class="weui-media-box__title" style='font-size:25rpx;'>
+        <text style='color:red;'>打听求助#</text>标题一</view>
       <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
     </view>
   </view>
@@ -39,7 +41,8 @@
       <image class="weui-media-box__thumb" src="{{icon60}}" />
     </view>
     <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-      <view class="weui-media-box__title" style='font-size:25rpx;'><text style='color:red;'>求职招聘#</text>标题二</view>
+      <view class="weui-media-box__title" style='font-size:25rpx;'>
+        <text style='color:red;'>求职招聘#</text>标题二</view>
       <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
     </view>
   </view>
