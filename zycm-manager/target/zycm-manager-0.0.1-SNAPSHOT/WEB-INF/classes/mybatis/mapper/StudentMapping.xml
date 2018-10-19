@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<mapper namespace="zycm.manager.mapper.StudentMapper">
+	<insert id="addStudent">
+		INSERT INTO student (id,clazz,name,age,level,isPay,create_time) VALUES
+		(#{id},#{clazz},#{name},#{age},#{level},#{isPay},NOW())
+	</insert>
+	<insert id="addSignUp">
+		INSERT INTO to_sign_up (id,name,phone,qq,create_time) VALUES
+		(#{id},#{name},#{phone},#{qq},NOW())
+	</insert>
+	<select id="queryStudentList" resultType="zycm.manager.entity.StudentEntity">
+		SELECT
+		id id,
+		clazz clazz,
+		name name,
+		age age,
+		level level,
+		isPay isPay,
+		create_time createTime,
+		update_time updateTime
+		FROM
+		student
+		LIMIT #{page},#{rows}
+	</select>
+	<select id="queryStudentNum" resultType="java.lang.Integer">
+		SELECT
+		count(*)
+		FROM
+		student
+	</select>
+</mapper>
