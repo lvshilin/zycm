@@ -15,63 +15,64 @@
     <image class='sign-menu-img' src='../../pic/user/jifen.png'></image>
   </view>
 </view>
+<view class='menuDiv'>
+  <view class="user-menu" bindtap='toAddress'>
+    <view style='width:15%;text-align: center;'>
+      <image class="user-menu-img" src='../../pic/user/address.png'></image>
+    </view>
+    <view class="user-menu-text">收货地址</view>
+    <view style='width:15%;'>
+      <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
+  </view>
 
-<view class="user-menu" bindtap='toMyPush'>
-  <view style='width:15%;text-align: center;'>
-    <image class="user-menu-img" src='../../pic/user/address.png'></image>
+  <view class="user-menu">
+    <view style='width:15%;text-align: center;'>
+      <image class="user-menu-img" src='../../pic/user/huitie.png'></image>
+    </view>
+    <view class="user-menu-text">我回复的帖子</view>
+    <view style='width:15%;'>
+      <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
   </view>
-  <view class="user-menu-text">收货地址</view>
-  <view style='width:15%;'>
-    <image class="user-menu-more" src='../../pic/user/more.png'></image>
-  </view>
-</view>
 
-<view class="user-menu">
-  <view style='width:15%;text-align: center;'>
-    <image class="user-menu-img" src='../../pic/user/huitie.png'></image>
+  <view class="user-menu" bindtap='toMySave'>
+    <view style='width:15%;text-align: center;'>
+      <image class="user-menu-img" src='../../pic/user/shoucang.png'></image>
+    </view>
+    <view class="user-menu-text">我收藏的商品</view>
+    <view style='width:15%;'>
+      <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
   </view>
-  <view class="user-menu-text">我回复的帖子</view>
-  <view style='width:15%;'>
-    <image class="user-menu-more" src='../../pic/user/more.png'></image>
-  </view>
-</view>
 
-<view class="user-menu" bindtap='toMySave'>
-  <view style='width:15%;text-align: center;'>
-    <image class="user-menu-img" src='../../pic/user/shoucang.png'></image>
+  <view class="user-menu" bindtap='toMyLike'>
+    <view style='width:15%;text-align: center;'>
+      <image class="user-menu-img" src='../../pic/user/dianzan.png'></image>
+    </view>
+    <view class="user-menu-text">我点赞的帖子</view>
+    <view style='width:15%;'>
+      <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
   </view>
-  <view class="user-menu-text">我收藏的商品</view>
-  <view style='width:15%;'>
-    <image class="user-menu-more" src='../../pic/user/more.png'></image>
-  </view>
-</view>
 
-<view class="user-menu" bindtap='toMyLike'>
-  <view style='width:15%;text-align: center;'>
-    <image class="user-menu-img" src='../../pic/user/dianzan.png'></image>
+  <view class="user-menu">
+    <view style='width:15%;text-align: center;'>
+      <image class="user-menu-img" src='../../pic/user/ruzhu.png'></image>
+    </view>
+    <view class="user-menu-text">商家入驻</view>
+    <view style='width:15%;'>
+      <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
   </view>
-  <view class="user-menu-text">我点赞的帖子</view>
-  <view style='width:15%;'>
-    <image class="user-menu-more" src='../../pic/user/more.png'></image>
-  </view>
-</view>
 
-<view class="user-menu">
-  <view style='width:15%;text-align: center;'>
-    <image class="user-menu-img" src='../../pic/user/ruzhu.png'></image>
-  </view>
-  <view class="user-menu-text">商家入驻</view>
-  <view style='width:15%;'>
-    <image class="user-menu-more" src='../../pic/user/more.png'></image>
-  </view>
-</view>
-
-<view class="user-menu">
-  <view style='width:15%;text-align: center;'>
-    <image class="user-menu-img" src='../../pic/user/guanli.png'></image>
-  </view>
-  <view class="user-menu-text">商家管理</view>
-  <view style='width:15%;'>
-    <image class="user-menu-more" src='../../pic/user/more.png'></image>
+  <view class="user-menu">
+    <view style='width:15%;text-align: center;'>
+      <image class="user-menu-img" src='../../pic/user/guanli.png'></image>
+    </view>
+    <view class="user-menu-text">商家管理</view>
+    <view style='width:15%;'>
+      <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
   </view>
 </view>

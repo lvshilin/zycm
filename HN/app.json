@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/user/user",
     "pages/myPush/myPush",
     "pages/myLike/myLike",
@@ -9,8 +10,8 @@
  
     "pages/storeList/storeList",
     "pages/pushDetail/pushDetail",
-    "pages/storeDetail/storeDetail",
-    "pages/index/index"
+    "pages/storeDetail/storeDetail"
+
   ],
   "window":{
     "backgroundTextStyle":"light",

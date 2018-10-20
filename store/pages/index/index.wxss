@@ -51,9 +51,9 @@
   height: 81rpx;
 }
 .itemList{
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
 }
 .itemDiv{
   width: 50%;

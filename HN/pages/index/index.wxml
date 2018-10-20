@@ -1,7 +1,7 @@
-<swiper indicator-dots="true" autoplay="true" style='width:100%;height:400rpx'>
+<swiper indicator-dots="true" autoplay="true" style='width:100%;height:300rpx'>
   <block wx:for="{{indexUrls}}">
     <swiper-item>
-      <image src="{{item}}" style='width:100%;height:400rpx' />
+      <image src="{{item}}" style='width:100%;height:300rpx' />
     </swiper-item>
   </block>
 </swiper>
@@ -25,6 +25,11 @@
     </view>
   </view>
 </view>
+
+<view class='menuDiv'>
+   <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;'>最新公告：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶</view>
+</view>
+
 <view class="weui-panel__bd">
   <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap='postDetail'>
     <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">

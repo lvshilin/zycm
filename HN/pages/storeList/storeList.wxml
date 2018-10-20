@@ -18,7 +18,8 @@
 <view>
 
 <view class='store-type'>
-  
+   <view style='width:50%'>实体店</view>
+   <view style='width:50%'>微商店铺</view>
 </view>
 
   <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-uuid='0454'>
