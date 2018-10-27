@@ -37,6 +37,21 @@ Page({
         that.setData({
           files: that.data.files.concat(res.tempFilePaths)
         });
+        var filePath = res.tempFilePaths[0];
+        var cloudPath = Date.parse(new Date())+".png";
+        wx.cloud.uploadFile({
+          // 指定上传到的云路径
+          cloudPath,
+          // 指定要上传的文件的小程序临时文件路径
+          filePath,
+          // 成功回调
+          success: function(res) {
+            console.log(res)
+          },
+          fail: function(res){
+            console.log(res);
+          }
+        })
       }
     })
   },

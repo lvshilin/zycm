@@ -12,6 +12,7 @@ Page({
   },
   joinUsTap: function(e) {
     var that = this;
+    const db = wx.cloud.database();
     wx.showModal({
       title: '我要报名',
       content: '请确认您提交的信息,我们将在一个工日内联系您',
@@ -19,25 +20,16 @@ Page({
       cancelText: "取消",
       success: function (res) {
         if (res.confirm) {
-          wx.request({
-            url: 'http://localhost:8080/zycm-manager/addSignUp.do', //仅为示例，并非真实的接口地址
-            method : 'POST',
+          db.collection('signList').add({
+            // data 字段表示需新增的 JSON 数据
             data: {
+              // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
               name: that.data.username,
               phone: that.data.phone,
-              qq: that.data.qq
-            },
-            header: {
-              'content-type': 'application/json' // 默认值
+              qq: that.data.qq,
             },
             success: function (res) {
-              if(res.data.code==200){
-                wx.showModal({
-                  title: '提示',
-                  showCancel: false,
-                  content: '您的信息已经提交，我们将在24小时内联系您',
-                })
-              }
+              console.log(res)
             }
           })
         } else {

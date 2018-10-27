@@ -14,6 +14,7 @@ Page({
    */
   data: {
     userInfo: {},
+    openId:'',
     hasUserInfo: false,
   },
 
@@ -21,7 +22,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var openId = app.globalData.openId;
+    console.log(openId);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -31,7 +33,7 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo
+          app.globalData.openId = res.userInfo
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
