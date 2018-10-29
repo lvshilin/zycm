@@ -1,0 +1,29 @@
+
+<view class="weui-flex">
+  <view class="weui-flex__item">
+    <view class="weui-panel__hd">企业后台管理系统(PC端)</view>
+    <view class="weui-panel__hd">游客访问地址：*********</view>
+    <view class="placeholder">
+      <image src='../../static/product/admin.png' style='margin-top:10px;'></image>
+    </view>
+  </view>
+</view>
+
+<view class="weui-flex">
+  <view class="weui-flex__item">
+    <view class="weui-panel__hd">微信小程序(移动端)</view>
+    <view class="weui-panel__hd">游客访问地址：本站</view>
+    <view class="placeholder">
+      <image src='../../static/product/wechat.png' style='margin-top:10px;'></image>
+    </view>
+  </view>
+</view>
+
+<!-- 底部版权 -->
+<view class="weui-footer">
+  <view class="weui-footer__links">
+    <view class="weui-footer__link">周瑜传媒</view>
+  </view>
+  <view class="weui-footer__text">Copyright © 2018-2021</view>
+</view>
+
