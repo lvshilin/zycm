@@ -60,13 +60,13 @@
     <view style='width:15%;text-align: center;'>
       <image class="user-menu-img" src='../../pic/user/ruzhu.png'></image>
     </view>
-    <view class="user-menu-text">商家入驻</view>
+    <view class="user-menu-text">我要入驻</view>
     <view style='width:15%;'>
       <image class="user-menu-more" src='../../pic/user/more.png'></image>
     </view>
   </view>
 
-  <view class="user-menu">
+  <view class="user-menu" bindtap='toManager'>
     <view style='width:15%;text-align: center;'>
       <image class="user-menu-img" src='../../pic/user/guanli.png'></image>
     </view>

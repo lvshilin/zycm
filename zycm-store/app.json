@@ -1,10 +1,13 @@
 {
   "cloud": true,
   "pages":[
+    "pages/manager/addGoods",
+    "pages/manager/manager",
+    "pages/manager/login",
+    "pages/user/user",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/user/user",
-    "pages/user/address",
+    "pages/user/address",  
     "pages/goods/goods"
   ],
   "window":{

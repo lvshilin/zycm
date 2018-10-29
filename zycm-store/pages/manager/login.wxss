@@ -1,0 +1,33 @@
+page {
+  background-color: #1296db;
+}
+
+.loginDiv {
+  height: 100rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin-top: 10rpx;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 25rpx;
+}
+
+.managerText {
+  width: 20%;
+  text-align: center;
+}
+
+.managerInput {
+  margin-top: 10rpx;
+  width: 80%;
+  font-size: 40rpx;
+  height: 80rpx;
+}
+
+.managerImg {
+  margin-top: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
