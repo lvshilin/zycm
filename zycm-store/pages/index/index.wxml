@@ -1,0 +1,67 @@
+<view class="searchDiv">
+  <view class="searchText">
+    <input class='searchInput' placeholder="请输入要搜索的标题" bindinput="searchInput"></input>
+  </view>
+  <image bindtap='search' class='searchIoc' src='../../pic/search.png'></image>
+</view>
+
+<swiper indicator-dots="true" autoplay="true" style='width:100%;height:300rpx'>
+  <block wx:for="{{indexUrls}}">
+    <swiper-item>
+      <image src="{{item}}" style='width:100%;height:300rpx' />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='menuDiv'>
+  <view class='indexMenuDiv'>
+    <view class='indexMenu' bindtap='queryType' data-type='dtqz'>
+      <image class='indexMenuLogo' src='../../pic/index/xinpin.png'></image>
+      <view>新品推荐</view>
+    </view>
+    <view class='indexMenu'>
+      <image class='indexMenuLogo' src='../../pic/index/shupuer.png'></image>
+      <view>熟普洱茶</view>
+    </view>
+    <view class='indexMenu'>
+      <image class='indexMenuLogo' src='../../pic/index/shengpuer.png'></image>
+      <view>生普洱茶</view>
+    </view>
+    <view class='indexMenu'>
+      <image class='indexMenuLogo' src='../../pic/index/chahuchaju.png'></image>
+      <view>茶壶茶具</view>
+    </view>
+  </view>
+</view>
+<view class='menuDiv'>
+  <view style='display: flex;flex-direction: row;'>
+   <image class='wenzhang' src='../../pic/index/kepu.png'></image>
+   <view style='margin-top:25rpx;margin-left:25rpx;color: #e05013;'>点击这里：带你了解普洱茶</view>
+  </view>
+</view>
+
+<view class='itemList'>
+   <view class='itemDiv'>
+    <view class='itemBorder'>
+      <image src='../../pic/item.jpg'></image>
+      <view class="itemText">云南大益七子饼茶</view>
+      <view class="itemText">￥455/饼</view>
+    </view> 
+   </view>
+    <view class='itemDiv'>
+    <view class='itemBorder'>
+      <image src='../../pic/item.jpg'></image>
+      <view class="itemText">云南大益七子饼茶</view>
+      <view class="itemText">￥455/饼</view>
+    </view> 
+   </view>
+    <view class='itemDiv'>
+    <view class='itemBorder'>
+      <image src='../../pic/item.jpg'></image>
+      <view class="itemText">云南大益七子饼茶</view>
+      <view class="itemText">￥455/饼</view>
+    </view> 
+   </view>
+    
+</view>
+   
