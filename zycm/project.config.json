@@ -11,9 +11,15 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
+<<<<<<< HEAD
 	"libVersion": "2.3.0",
 	"appid": "wxb9c16a8ba2f17ce0",
 	"projectname": "store",
+=======
+	"libVersion": "2.2.0",
+	"appid": "wxf9f59a5bf3fecdfa",
+	"projectname": "zycm-01",
+>>>>>>> parent of cfa024a... 互换
 	"isGameTourist": false,
 	"condition": {
 		"search": {
