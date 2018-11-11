@@ -35,33 +35,32 @@
 </view>
 <view class='menuDiv'>
   <view style='display: flex;flex-direction: row;'>
-   <image class='wenzhang' src='../../pic/index/kepu.png'></image>
-   <view style='margin-top:25rpx;margin-left:25rpx;color: #e05013;'>点击这里：带你了解普洱茶</view>
+    <image class='wenzhang' src='../../pic/index/kepu.png'></image>
+    <view style='margin-top:25rpx;margin-left:25rpx;color: #e05013;'>点击这里：带你了解普洱茶</view>
   </view>
 </view>
 
 <view class='itemList'>
-   <view class='itemDiv'>
+  <view class='itemDiv'>
     <view class='itemBorder'>
       <image src='../../pic/item.jpg'></image>
       <view class="itemText">云南大益七子饼茶</view>
       <view class="itemText">￥455/饼</view>
-    </view> 
-   </view>
-    <view class='itemDiv'>
+    </view>
+  </view>
+  <view class='itemDiv'>
     <view class='itemBorder'>
       <image src='../../pic/item.jpg'></image>
       <view class="itemText">云南大益七子饼茶</view>
       <view class="itemText">￥455/饼</view>
-    </view> 
-   </view>
-    <view class='itemDiv'>
+    </view>
+  </view>
+  <view class='itemDiv'>
     <view class='itemBorder'>
       <image src='../../pic/item.jpg'></image>
       <view class="itemText">云南大益七子饼茶</view>
       <view class="itemText">￥455/饼</view>
-    </view> 
-   </view>
-    
+    </view>
+  </view>
+
 </view>
-   

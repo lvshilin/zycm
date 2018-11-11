@@ -1,1 +1,29 @@
-/* pages/goods/goods.wxss */
+.goodsTitle{
+  margin: 10rpx;
+}
+.goodsPrice{
+  margin: 10rpx;
+  color: red;
+}
+.goodsBottom{
+  position:fixed;
+  width: 100%;
+  height: 120rpx;
+  bottom: 0rpx;
+  background-color: #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20rpx;
+}
+.goodsBuyBotton{
+  width: 40%;
+}
+.info-btn{
+  height: 70rpx;
+  margin: 25rpx;
+  border: 1rpx solid #d81e06;
+  background-color:#d81e06;
+  border-radius: 40rpx;
+  text-align: center;
+  color: white;
+}
