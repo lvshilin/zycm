@@ -1,0 +1,4 @@
+<view class="div">
+<image class="backImg" style="height:{{height}}" src='../../pic/auth.jpg'></image>
+<button class="weui-btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" type="primary" style='width: 70%;border-radius: 25rpx; position: absolute;bottom:{{authHeight}}; margin-left: 15%'>授权</button>
+</view>

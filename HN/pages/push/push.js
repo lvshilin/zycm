@@ -72,6 +72,7 @@ Page({
         that.setData({
           pushList: res.data.data
         })
+        console.log(res.data.data);
       }
     })
   },

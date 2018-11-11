@@ -1,0 +1,15 @@
+
+<view style='height:300rpx;'></view>
+<view class='loginDiv'>
+    <view class='managerText'>
+      <image class='managerImg' src='../../pic/user/manager.png'></image>
+    </view>
+    <input class="managerInput" bindinput='managerId' placeholder="请输入管理员帐号" />
+</view>
+<view class='loginDiv'>
+    <view class='managerText'>
+      <image class='managerImg' src='../../pic/user/password.png'></image>
+    </view>
+    <input class="managerInput" bindinput='password' placeholder="请输入管理员密码" />
+</view>
+ <button class="weui-btn" type="primary" style='width: 70%;border-radius: 25rpx;'>确定</button>

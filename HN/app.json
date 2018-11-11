@@ -2,13 +2,15 @@
   "cloud":true,
   "pages":[
     "pages/index/index",
+    "pages/auth/auth",
+    "pages/join/join",
     "pages/user/user",
     "pages/myPush/myPush",
     "pages/myLike/myLike",
     "pages/push/push",
     "pages/mySave/mySave",
     "pages/newPush/newPush",
- 
+    "pages/manager/login",
     "pages/storeList/storeList",
     "pages/pushDetail/pushDetail",
     "pages/storeDetail/storeDetail"

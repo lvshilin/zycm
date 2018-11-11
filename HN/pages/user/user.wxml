@@ -8,7 +8,7 @@
 </view>
 
 <view class='signMenu'>
-  <view class='sign-menu-item'>
+  <view class='sign-menu-item' bindtap='signBtn'>
     <image class='sign-menu-img' src='../../pic/user/sign.png'></image>
   </view>
   <view class='sign-menu-item'>
@@ -66,7 +66,7 @@
   </view>
 </view>
 
-<view class="user-menu">
+<view class="user-menu" bindtap='toManager'>
   <view style='width:15%;text-align: center;'>
     <image class="user-menu-img" src='../../pic/user/guanli.png'></image>
   </view>

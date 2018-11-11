@@ -48,7 +48,7 @@ page{
   width: 70rpx;
 }
 .signMenu{
-  height: 150rpx;
+  height: 150rpx; 
   width: 100%;
   background-color:white;
   display: flex;
@@ -60,7 +60,7 @@ page{
   text-align: center;
 }
 .sign-menu-img{
-  margin-top: 25rpx;
+  margin-top: 10rpx;
   height: 100rpx;
   width: 100rpx;
 }
