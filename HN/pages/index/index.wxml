@@ -27,7 +27,7 @@
 </view>
 
 <view class='menuDiv'>
-   <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;'>最新公告：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶</view>
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;'>最新公告：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶</view>
 </view>
 
 <view class="weui-panel__bd">
@@ -51,4 +51,10 @@
       <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
     </view>
   </view>
+</view>
+<view class="weui-footer">
+  <view class="weui-footer__links">
+    <view  class="weui-footer__link">周瑜网络传媒</view>
+  </view>
+  <view class="weui-footer__text">Copyright © 2018-2022</view>
 </view>

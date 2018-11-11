@@ -22,8 +22,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var openId = app.globalData.openId;
-    console.log(openId);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -81,6 +79,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    this.data.openId = app.data.openId;
+    console.log(this.data.openId);
     var latitude = 0;
     var longitude = 0;
     wx.getLocation({
@@ -145,6 +145,31 @@ Page({
   toMyLike: function () {
     wx.navigateTo({
       url: '../../pages/myLike/myLike',
+    })
+  },
+  toManager: function() {
+    wx.navigateTo({
+      url: '../../pages/manager/login',
+    })
+  },
+  signBtn: function() {
+    console.log("您点击了签到" + this.data.openId);
+    wx.request({
+      url: 'http://localhost:8084/zycm-we/user/addSignRecord.do',
+      method: 'POST',
+      data: {
+        openId: this.data.openId,
+      },
+      success: function (res) {
+        console.log(res);
+        wx.showModal({
+          title: '提示',
+          content: '签到成功,积分+5',
+          showCancel: false,
+          success(res) {
+          }
+        })
+      }
     })
   }
 })

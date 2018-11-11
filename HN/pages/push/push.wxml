@@ -12,7 +12,7 @@
 
 <view class="push-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-id='{{item.id}}' wx:for="{{pushList}}" bindtap='pushDetailPage'>
   <view class='push-img'>
-    <image class='pushImg' src='../../pic/storeList/dianpu.jpg'></image>
+    <image class='pushImg' src='{{item.avatarUrl}}'></image>
   </view>
   <view class='push-detail'>
     <view class='push-title'>

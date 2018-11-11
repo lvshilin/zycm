@@ -8,7 +8,7 @@ Page({
       "../../pic/index/1.jpg",
       "../../pic/index/2.jpg"
     ],
-    openId:'',
+    openId: '',
   },
   queryType: function(e) {
     console.log(e.currentTarget.dataset.type);
@@ -19,23 +19,20 @@ Page({
     })
   },
   onLoad: function() {
-    this.getOpenid();
-  },
-  onShow: function() {},
-  getUserInfo: function(e) {},
-  getOpenid() {
-    let that = this;
-    wx.cloud.callFunction({
-      name: 'getOpenid',
-      complete: function (res) {
-        var openId = res.result.openId;
-        console.log(openId);
-        that.setData({
-          openId: openId
-        })
-        console.log(that.data.openId);
-        app.globalData.openId = openId;
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting['scope.userInfo'])
+        if (!res.authSetting['scope.userInfo']){
+          wx.redirectTo({
+            url: '../../pages/auth/auth',
+          })
+        }
       }
     })
-  }
+  },
+  onShow: function() {
+    this.data.openId = app.data.openId;
+    console.log("index" + this.data.openId)
+  },
+  getUserInfo: function(e) {},
 })

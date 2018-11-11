@@ -1,6 +1,5 @@
-// pages/newPush/newPush.js
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -9,12 +8,25 @@ Page({
     pushTypeIndex: 0,
     pushTitle:'',
     pushType:'',
-    pushText:'',
-    showTopTips: false,
+    pushDetail:'',
+    isHide:'0',
     files: [],
+    openId:''
   },
   pushTypeChange: function(e){
     console.log('picker account 发生选择改变，携带值为', e.detail.value);
+    if (e.detail.value == 1){
+      this.data.pushType = 'dtqz'
+    }
+    if (e.detail.value == 2) {
+      this.data.pushType = 'qzzp'
+    }
+    if (e.detail.value == 3) {
+      this.data.pushType = 'esxz'
+    }
+    if (e.detail.value == 4) {
+      this.data.pushType = 'jlhd'
+    }
     this.setData({
       pushTypeIndex: e.detail.value
     })
@@ -23,8 +35,51 @@ Page({
     this.data.pushTitle = e.detail.value;
     console.log(this.data.pushTitle);
   },
+  getPushDetail: function (e) {
+    this.data.pushDetail = e.detail.value;
+    console.log(this.data.pushDetail);
+  },
   switchChange: function(e){
     console.log(e.detail.value);
+    if (e.detail.value){
+      this.isHide = '1'
+    }else{
+      this.isHide = '0'
+    }
+  },
+  commitPush: function(){
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '请确认您发布的内容，请勿涉及到政治色情等违法内容',
+      success(res) {
+        if (res.confirm) {
+          wx.request({
+            url: 'http://localhost:8084/zycm-we/push/addNewPush.do',
+            method: 'POST',
+            data: {
+              openId: that.data.openId,
+              pushTitle: that.data.pushTitle,
+              pushType: that.data.pushType,
+              pushDetail: that.data.pushDetail,
+              isHide: that.data.isHide
+            },
+            success: function (res) {
+              wx.showToast({
+                title: '成功',
+                icon: 'success',
+                duration: 2000,
+                success: function(){
+                  wx.switchTab({
+                    url: '/pages/push/push',
+                  })
+                }
+              })
+            }
+          })
+        }
+      }
+    })
   },
   chooseImage: function (e) {
     var that = this;
@@ -67,7 +122,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
@@ -81,7 +136,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.data.openId = app.data.openId;
   },
 
   /**
