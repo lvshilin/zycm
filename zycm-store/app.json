@@ -1,14 +1,14 @@
 {
   "cloud": true,
   "pages":[
-    "pages/manager/login",
+    "pages/goods/goods",
     "pages/index/index",
-    "pages/manager/addGoods",
     "pages/manager/manager",
+    "pages/manager/addGoods",
+    "pages/manager/login",
     "pages/user/user",
     "pages/logs/logs",
-    "pages/user/address",  
-    "pages/goods/goods"
+    "pages/user/address"
   ],
   "window":{
     "backgroundTextStyle":"light",
