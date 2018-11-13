@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/user/user",
+    "pages/auth/auth"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "数据宝",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#e05013",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首🔥页",
+        "iconPath": "pic/index/home.png",
+        "selectedIconPath": "pic/index/home-s.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人🔥中心",
+        "iconPath": "pic/index/user.png",
+        "selectedIconPath": "pic/index/user-s.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+page{
+  height: 100%
+}
+.backImg{
+  width: 100%;
+}
+.div{
+  height:100%;
+  overflow: hidden;
+}
