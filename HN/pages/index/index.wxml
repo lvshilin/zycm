@@ -27,7 +27,7 @@
 </view>
 
 <view class='menuDiv'>
-  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;'>最新公告：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶点击这里：带你了解普洱茶</view>
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:25rpx;'>最新公告：发表内容切勿有关政治，色情，赌博等相关违法内容</view>
 </view>
 
 <view class="weui-panel__bd">

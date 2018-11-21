@@ -3,7 +3,7 @@
   "pages":[
     "pages/index/index",
     "pages/product/productList",
-    "pages/join/joinUs",
+    "pages/about/about",
     "pages/studyDetail/studyDetail"
   ],
   "window":{
@@ -28,10 +28,10 @@
         "text": "项目展示"
       },
       {
-        "pagePath": "pages/join/joinUs",
-        "iconPath": "static/joinUs2.png",
-        "selectedIconPath": "static/joinUs.png",
-        "text": "我要报名"
+        "pagePath": "pages/about/about",
+        "iconPath": "static/about2.png",
+        "selectedIconPath": "static/about.png",
+        "text": "关于我们"
       }
     ],
     "selectedColor": "#1296db",

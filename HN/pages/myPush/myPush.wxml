@@ -1,11 +1,11 @@
-<view class="my-push-div">
+<view class="my-push-div" wx:for="{{pushList}}">
  <view class='my-push-item'>
     <view class='my-push-title'>
-      <text style='color:red;'>打听求助#</text>狗丢了</view>
-    <view class='my-push-text'>狗被人偷了</view>
-    <view class="my-push-date">2016.09.12</view>
+      <text style='color:red;'>{{item.dictText}}</text>{{item.pushTitle}}</view>
+    <view class='my-push-text'>{{item.pushDetail}}</view>
+    <view class="my-push-date">{{item.createTimeStr}}</view>
   </view>
-    <view class="my-push-btn" >
-    <image bindtap='cancelPush' src='../../pic/quxiaoshoucang.png'></image>
+    <view class="my-push-btn">
+    <image bindtap='cancelPush' data-id='{{item.id}}' src='../../pic/quxiaoshoucang.png'></image>
   </view>
-</view>
+</view> 

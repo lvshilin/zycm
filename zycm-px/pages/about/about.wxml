@@ -1,0 +1,17 @@
+<view>
+  <image class="about" src='../../static/about/about.jpg'></image>
+</view>
+<view class="us">
+  <view class="us-title">- 关于我们 -</view>
+  <view style='text-align: center;'>
+    <image style='width:400rpx;height:400rpx;' src='../../static/about/erweima.jpg'></image>
+  </view>
+  <view class="us-context">小程序设计，小程序编程培训，媒体广告，公众号运营等业务</view>
+</view>
+<!-- 底部版权 -->
+<view class="weui-footer">
+  <view class="weui-footer__links">
+    <view class="weui-footer__link">周瑜传媒</view>
+  </view>
+  <view class="weui-footer__text">Copyright © 2018-2021</view>
+</view>

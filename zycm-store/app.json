@@ -1,8 +1,8 @@
 {
   "cloud": true,
   "pages":[
-    "pages/goods/goods",
     "pages/index/index",
+    "pages/goods/goods",
     "pages/manager/manager",
     "pages/manager/addGoods",
     "pages/manager/login",

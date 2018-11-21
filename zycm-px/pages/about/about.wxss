@@ -1,0 +1,17 @@
+.about{
+  width: 100%;
+  height: 350rpx;
+}
+.us{
+  display: flex;
+  flex-direction: column;
+}
+.us-title{
+  text-align: center;
+}
+.us-context{
+  text-align: center;
+  border-bottom: 1rpx solid #cdcdcd;
+  font-size: 20rpx;
+  padding: 10rpx;
+}
