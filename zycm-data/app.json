@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/user/user",
+    "pages/item/english",
     "pages/auth/auth"
   ],
   "window": {

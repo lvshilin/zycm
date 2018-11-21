@@ -1,0 +1,7 @@
+.itemDiv{
+  margin:2%;
+  height: auto;
+  width: 96%;
+  border: 1rpx solid #e6e6e6;
+  border-radius: 25rpx;
+}

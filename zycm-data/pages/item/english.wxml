@@ -1,0 +1,4 @@
+<view class='itemDiv' wx:for="{{itemList}}">
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:45rpx;'>{{item.chinese}}</view>
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:45rpx;'>{{item.english}}</view>
+</view>

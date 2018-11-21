@@ -1,0 +1,20 @@
+<view class='itemList'>
+  <view class='itemDiv'>
+    <view class='itemBorder'>
+      <image src='../../pic/index/cejixiong.png'></image>
+      <view class="itemText">测吉凶</view>
+    </view>
+  </view>
+  <view class='itemDiv'>
+    <view class='itemBorder'>
+      <image src='../../pic/index/jiemeng.png'></image>
+      <view class="itemText">周公解梦</view>
+    </view>
+  </view>
+  <view class='itemDiv' bindtap='yylzyl'>
+    <view class='itemBorder'>
+      <image src='../../pic/index/lizhi.jpg'></image>
+      <view class="itemText">英语励志语录</view>
+    </view>
+  </view>
+</view>

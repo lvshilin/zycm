@@ -10,7 +10,7 @@
   </view>
 </scroll-view>
 
-<view class="push-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-id='{{item.id}}' wx:for="{{pushList}}" bindtap='pushDetailPage'>
+<view class="push-item" hover-class="weui-cell_active"  data-id='{{item.id}}' wx:for="{{pushList}}" bindtap='pushDetailPage'>
   <view class='push-img'>
     <image class='pushImg' src='{{item.avatarUrl}}'></image>
   </view>
