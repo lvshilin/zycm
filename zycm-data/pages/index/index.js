@@ -3,14 +3,18 @@
 const app = getApp()
 
 Page({
-  data: {
-  },
-  onLoad: function () {
-  
+  data: {},
+  onLoad: function() {
+
   },
   yylzyl: function() {
     wx.navigateTo({
       url: '../../pages/item/english'
+    })
+  },
+  cjx: function() {
+    wx.navigateTo({
+      url: '../../pages/item/cejixiong'
     })
   }
 })

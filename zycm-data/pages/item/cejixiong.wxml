@@ -1,0 +1,80 @@
+<view class="weui-cell weui-cell_select">
+  <view class="weui-cell__bd">
+    <picker bindchange="typeChange" value="{{typeIndex}}" range="{{typeList}}">
+      <view class="weui-select">{{typeList[typeIndex]}}</view>
+    </picker>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title" wx:if="{{testType==1}}">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">姓</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getXing' placeholder="请输入查询相关内容(必填)" />
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">名</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getMing' placeholder="请输入查询相关内容(必填)" />
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title" wx:if="{{testType==2}}">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">公司名</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getGongsiming' placeholder="请输入查询相关内容(必填)" />
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title" wx:if="{{testType==3}}">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">QQ号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getQqhao' placeholder="请输入查询相关内容(必填)" />
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title" wx:if="{{testType==4}}">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">车牌号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getChepaihao' placeholder="请输入查询相关内容(必填)" />
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title" wx:if="{{testType==5}}">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">手机号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getShoujihao' placeholder="请输入查询相关内容(必填)" />
+    </view>
+  </view>
+</view>
+<button class='bt' bindtap='queryTest'>点击查询</button>
+<view class='itemDiv' wx:for="{{contentList}}" wx:if="{{testType==1}}">
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;'>{{item.title}}</view>
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;' wx:for="{{item.expList}}">{{item}}</view>
+</view>
+<view class='itemDiv' wx:for="{{gongsiText}}" wx:if="{{testType==2}}">
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;'>{{item}}</view>
+</view>
+<view class='itemDiv' wx:for="{{qqText}}" wx:if="{{testType==3}}">
+  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;'>{{item}}</view>
+</view>

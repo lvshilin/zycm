@@ -1,5 +1,5 @@
 <view class='itemList'>
-  <view class='itemDiv'>
+  <view class='itemDiv' bindtap='cjx'>
     <view class='itemBorder'>
       <image src='../../pic/index/cejixiong.png'></image>
       <view class="itemText">测吉凶</view>

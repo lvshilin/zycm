@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/user/user",
     "pages/item/english",
+    "pages/item/cejixiong",
     "pages/auth/auth"
   ],
   "window": {
