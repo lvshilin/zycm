@@ -2,6 +2,7 @@
   "cloud":true,
   "pages":[
     "pages/user/user",
+    "pages/storeList/storeList",
     "pages/join/join",
     "pages/join/msg_success",
     "pages/index/index",
@@ -12,7 +13,6 @@
     "pages/user/mySave",
     "pages/newPush/newPush",
     "pages/manager/login",
-    "pages/storeList/storeList",
     "pages/pushDetail/pushDetail",
     "pages/storeDetail/storeDetail"
 

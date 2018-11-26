@@ -109,7 +109,9 @@ Page({
   onHide: function() {
 
   },
-
+  toShare: function(){
+    console.log('点击转发了')
+  },
   /**
    * 生命周期函数--监听页面卸载
    */
@@ -117,7 +119,6 @@ Page({
 
   },
   bindGetUserInfo: function(e) {
-    console.log(e.detail.userInfo);
 
     if (e.detail.userInfo) {
       app.globalData.userInfo = e.detail.userInfo;

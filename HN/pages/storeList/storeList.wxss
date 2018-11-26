@@ -101,5 +101,22 @@
   display: flex;
   border-top: 4rpx solid #e6e6e6;
   border-bottom: 4rpx solid #e6e6e6;
-  text-align: center;
+  padding: 2%;
+}
+.store-type-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  border-radius: 20rpx;
+}
+.store-type-img{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 10rpx;
+}
+.store-type-text{
+  margin-left: 15rpx;
+  font-size: 40rpx;
+  line-height: 2.3;
+  color: white;
 }

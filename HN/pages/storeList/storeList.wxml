@@ -18,8 +18,14 @@
 <view>
 
 <view class='store-type'>
-   <view style='width:50%'>实体店</view>
-   <view style='width:50%'>微商店铺</view>
+   <view class='store-type-div' style='width:48%;background-color: #1aad19;'>
+    <image class='store-type-img' src="../../pic/storeList/shiti.png"></image>
+    <view class='store-type-text'>实体店铺</view>
+   </view>
+   <view class='store-type-div' style='width:48%;background-color: #1296db;'>
+    <image class='store-type-img' src="../../pic/storeList/weishang.png"></image>
+    <view class='store-type-text'>微商店铺</view>
+   </view>
 </view>
 
   <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-uuid='0454'>

@@ -35,4 +35,24 @@ Page({
     console.log("index" + this.data.openId)
   },
   getUserInfo: function(e) {},
+  /**
+* 用户点击右上角分享（index.js）
+*/
+  onShareAppMessage: function (ops) {
+    if (ops.from === 'button') {
+      console.log(ops.target)
+    }
+    return {
+      title: '印象桦南',
+      path: 'pages/index/index',
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:" + JSON.stringify(res));
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
+  }
 })
