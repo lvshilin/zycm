@@ -17,4 +17,10 @@
       <view class="itemText">英语励志语录</view>
     </view>
   </view>
+  <view class='itemDiv' bindtap='ctssc'>
+    <view class='itemBorder'>
+      <image src='../../pic/index/cangtoushi.png'></image>
+      <view class="itemText">藏头诗生成</view>
+    </view>
+  </view>
 </view>

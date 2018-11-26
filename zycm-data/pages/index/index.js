@@ -16,5 +16,10 @@ Page({
     wx.navigateTo({
       url: '../../pages/item/cejixiong'
     })
+  },
+  ctssc: function() {
+    wx.navigateTo({
+      url: '../../pages/item/cangtousi'
+    })
   }
 })

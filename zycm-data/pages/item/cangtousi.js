@@ -1,4 +1,4 @@
-// pages/about/about.js
+// pages/item/cangtousi.js
 Page({
 
   /**
@@ -7,15 +7,7 @@ Page({
   data: {
 
   },
-  previewImage: function (e){
-    console.log(e);
-    var current = e.target.dataset.src;
-    console.log(current);
-    wx.previewImage({
-      current: current,
-      urls: [current]
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

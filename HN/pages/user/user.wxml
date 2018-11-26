@@ -56,7 +56,7 @@
   </view>
 </view>
 
-<view class="user-menu">
+<view class="user-menu" bindtap='toJoin'>
   <view style='width:15%;text-align: center;'>
     <image class="user-menu-img" src='../../pic/user/ruzhu.png'></image>
   </view>

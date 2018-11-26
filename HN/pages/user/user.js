@@ -134,17 +134,22 @@ Page({
   },
   toMyPush: function(){
     wx.navigateTo({
-      url: '../../pages/myPush/myPush',
+      url: '../../pages/user/myPush',
     })
   },
   toMySave: function(){
     wx.navigateTo({
-      url: '../../pages/mySave/mySave',
+      url: '../../pages/user/mySave',
+    })
+  },
+  toJoin: function () {
+    wx.navigateTo({
+      url: '../../pages/join/join',
     })
   },
   toMyLike: function () {
     wx.navigateTo({
-      url: '../../pages/myLike/myLike',
+      url: '../../pages/user/myLike',
     })
   },
   toManager: function() {

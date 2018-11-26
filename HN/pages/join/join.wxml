@@ -1,2 +1,76 @@
-<!--pages/join/join.wxml-->
-<text>pages/join/join.wxml</text>
+<view class="weui-cells__title">商家入驻</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">商铺名称</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getStoreName' placeholder="请输入商店名称" />
+    </view>
+  </view>
+
+
+
+  <view class="weui-cells weui-cells_after-title">
+    <radio-group bindchange="radioChange">
+      <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+        <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+
+        <view class="weui-cell__bd">{{item.name}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+          <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+        </view>
+      </label>
+    </radio-group>
+  </view>
+
+
+  <view class="weui-cell weui-cell_select">
+    <view class="weui-cell__bd">
+      <picker bindchange="pushTypeChange" value="{{pushTypeIndex}}" range="{{pushTypeList}}">
+        <view class="weui-select">{{pushTypeList[pushTypeIndex]}}</view>
+      </picker>
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells__title">请输入商铺介绍</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" bindinput='getStoreDesc' placeholder="请输入文本" style="height: 10em" />
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__hd">
+          <view class="weui-uploader__title">图片上传(可选)</view>
+        </view>
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{files}}" wx:key="*this">
+              <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+              </view>
+            </block>
+            <view class="weui-uploader__file">
+              <image class="weui-uploader__img" src="../../pic/push/picUpload.png" mode="aspectFill" />
+            </view>
+          </view>
+          <view class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="commitStore">确定</button>
+</view>

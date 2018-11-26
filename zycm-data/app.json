@@ -4,6 +4,7 @@
     "pages/user/user",
     "pages/item/english",
     "pages/item/cejixiong",
+    "pages/item/cangtousi",
     "pages/auth/auth"
   ],
   "window": {
