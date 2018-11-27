@@ -15,7 +15,6 @@ App({
         name: 'getOpenid',
         complete: function (res) {
           that.data.openId = res.result.openId;
-          console.log(that.data.openId);
         }
       })
     }

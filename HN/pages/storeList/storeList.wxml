@@ -18,64 +18,33 @@
 <view>
 
 <view class='store-type'>
-   <view class='store-type-div' style='width:48%;background-color: #1aad19;'>
+   <view class='store-type-div' bindtap='queryStoreListByType' data-storeType='0' style='width:48%;background-color: #1aad19;'>
     <image class='store-type-img' src="../../pic/storeList/shiti.png"></image>
     <view class='store-type-text'>实体店铺</view>
    </view>
-   <view class='store-type-div' style='width:48%;background-color: #1296db;'>
+   <view class='store-type-div' bindtap='queryStoreListByType' data-storeType='1' style='width:48%;background-color: #1296db;'>
     <image class='store-type-img' src="../../pic/storeList/weishang.png"></image>
     <view class='store-type-text'>微商店铺</view>
    </view>
 </view>
 
-  <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-uuid='0454'>
+  <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-id='{{item.id}}' wx:for="{{storeList}}">
     <view class='store-img'>
-      <image class='storeImg' src='../../pic/storeList/dianpu.jpg'></image>
+      <image class='storeImg' src='{{item.storeImg}}'></image>
     </view>
     <view class='store-detail'>
-      <view class='store-title'>🔥奶茶店🔥
-      <text decode="{{true}}" space="{{true}}" class="store-num">&nbsp;388收藏&nbsp;</text>
+      <view class='store-title'>{{item.storeName}}
+      <text decode="{{true}}" space="{{true}}" class="store-num">&nbsp;{{item.saveNum}}收藏&nbsp;</text>
       </view>
-      <view class='store-address'>桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道</view>
-      <view> 
-        <text style='background-color:red;' decode="{{true}}" space="{{true}}" class="store-num">&nbsp;外卖&nbsp;</text>
-      </view>
-    </view>
-    <view class='store-logo'>
-      <image class='store-go' src='../../pic/storeList/top.png'></image>
-    </view>
-  </view>
-  <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-uuid='0454'>
-    <view class='store-img'>
-      <image class='storeImg' src='../../pic/storeList/dianpu.jpg'></image>
-    </view>
-    <view class='store-detail'>
-      <view class='store-title'>奶茶店
-      <text decode="{{true}}" space="{{true}}" class="store-num">&nbsp;388收藏&nbsp;</text>
-      </view>
-      <view class='store-address'>桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道</view>
-      <view> 
-        <text style='background-color:red;' decode="{{true}}" space="{{true}}" class="store-num">&nbsp;外卖&nbsp;</text>
-      </view>
-    </view>
-    <view class='store-logo'>
-      <image class='store-go' src='../../pic/storeList/go.png'></image>
-    </view>
-  </view>
-  <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-uuid='0454'>
-    <view class='store-img'>
-      <image class='storeImg' src='../../pic/storeList/dianpu.jpg'></image>
-    </view>
-    <view class='store-detail'>
-      <view class='store-title'>奶茶店
-      <text decode="{{true}}" space="{{true}}" class="store-num">&nbsp;388收藏&nbsp;</text>
-      </view>
-      <view class='store-address'>桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道桦南县林业大道</view>
+      <view class='store-address'>{{item.storeDesc}}</view>
       <view>
          <text style='background-color:red;' decode="{{true}}" space="{{true}}" class="store-num">&nbsp;折扣&nbsp;</text>
       </view>
     </view>
-    <view class='store-logo'>
+    <view class='store-logo' wx:if="{{item.isTop!=0}}">
+      <image class='store-go' src='../../pic/storeList/top.png'></image>
+    </view>
+    <view class='store-logo' wx:else>
       <image class='store-go' src='../../pic/storeList/go.png'></image>
     </view>
   </view>

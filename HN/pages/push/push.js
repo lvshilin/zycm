@@ -114,8 +114,6 @@ Page({
         pushType: null,
       },
       success: function (res) {
-        console.log(res);
-        wx.hideLoading();
         that.setData({
           pushList: res.data.data
         })

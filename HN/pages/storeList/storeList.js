@@ -8,13 +8,14 @@ Page({
     indexUrls: [
       "../../pic/index/1.jpg",
       "../../pic/index/2.jpg"
-    ]
+    ],
+    storeList:[],
   },
   queryStoreDetail: function(e){
-    console.log(e.currentTarget.dataset.uuid);
-    var uuid = e.currentTarget.dataset.uuid;
+    console.log(e.currentTarget.dataset.id);
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../../pages/storeDetail/storeDetail?uuid='+uuid,
+      url: '../../pages/storeDetail/storeDetail?id='+id,
     })
   },
   /**
@@ -35,9 +36,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8084/zycm-we/store/queryStoreList.do',
+      method: 'POST',
+      data: {
+      },
+      success: function (res) {
+        that.setData({
+          storeList: res.data.data
+        })
+      }
+    })
   },
-
+  queryStoreListByType: function(e){
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8084/zycm-we/store/queryStoreList.do',
+      method: 'POST',
+      data: {
+        storeType: e.currentTarget.dataset.storetype
+      },
+      success: function (res) {
+        that.setData({
+          storeList: res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
