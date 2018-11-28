@@ -11,7 +11,7 @@
     "pages/user/myLike",
     "pages/push/push",
     "pages/user/mySave",
-    "pages/newPush/newPush",
+    "pages/push/newPush",
     "pages/manager/login",
     "pages/pushDetail/pushDetail",
     "pages/storeDetail/storeDetail"

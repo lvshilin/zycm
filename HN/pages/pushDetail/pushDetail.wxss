@@ -52,3 +52,54 @@
   border-radius: 15rpx;
   color: white;
 }
+
+
+
+.reply-item{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.reply-img{
+  width: 10%;
+  padding: 20rpx;
+}
+.replyImg{
+  height: 80rpx;
+  width: 80rpx;
+}
+.reply-detail{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-top: 8rpx;
+  padding-right: 20rpx;
+}
+.reply-name{
+  color: black;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.reply-text{
+  color: gray;
+  line-height: 1.2;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.reply-time{
+   color: black;
+   font-size: 25rpx;
+}
+.reply-huifu{
+  background-color: rebeccapurple;
+  color: white;
+}

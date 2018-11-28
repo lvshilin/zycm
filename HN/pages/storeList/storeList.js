@@ -12,10 +12,9 @@ Page({
     storeList:[],
   },
   queryStoreDetail: function(e){
-    console.log(e.currentTarget.dataset.id);
-    var id = e.currentTarget.dataset.id;
+    var storeId = e.currentTarget.dataset.storeid;
     wx.navigateTo({
-      url: '../../pages/storeDetail/storeDetail?id='+id,
+      url: '../../pages/storeDetail/storeDetail?storeId=' + storeId,
     })
   },
   /**

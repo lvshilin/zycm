@@ -158,7 +158,6 @@ Page({
     })
   },
   signBtn: function() {
-    console.log("您点击了签到" + this.data.openId);
     wx.request({
       url: 'http://localhost:8084/zycm-we/user/addSignRecord.do',
       method: 'POST',
@@ -166,10 +165,9 @@ Page({
         openId: this.data.openId,
       },
       success: function (res) {
-        console.log(res);
         wx.showModal({
           title: '提示',
-          content: '签到成功,积分+5',
+          content: res.data.message,
           showCancel: false,
           success(res) {
           }

@@ -9,9 +9,10 @@ Page({
       "../../pic/index/1.jpg",
       "../../pic/index/2.jpg"
     ],
-    openId: '',
+    openId: null,
     isSave: null,
-    id: ''
+    storeId: null,
+    id:null
   },
   shoucang: function() {
     var that = this;
@@ -25,7 +26,8 @@ Page({
       url: 'http://localhost:8084/zycm-we/store/addStoreSaveByOpenId.do',
       method: 'POST',
       data: {
-        storeId: that.data.id,
+        id: that.data.id,
+        storeId: that.data.storeId,
         openId: that.data.openId,
         isSave: isSaveFlag
       },
@@ -54,7 +56,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.data.id = options.id;
+    this.data.storeId = options.storeId;
   },
 
   /**
@@ -75,14 +77,20 @@ Page({
       method: 'POST',
       data: {
         openId: that.data.openId,
-        storeId: that.data.id,
+        storeId: that.data.storeId,
       },
       success: function (res) {
-        console.log(res.data.data);
         if (res.data.data!=null){
-          that.setData({
-            isSave: true
-          })
+          that.data.id =  res.data.data.id
+          if(that.data.isSave==1){
+            that.setData({
+              isSave: true
+            })
+          }else{
+            that.setData({
+              isSave: false
+            })
+          }
         }else{
           that.setData({
             isSave: false

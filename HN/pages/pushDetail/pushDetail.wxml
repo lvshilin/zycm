@@ -1,20 +1,12 @@
 <view class='push-detail-head'>
   <view class='push-user-img'>
-    <image class='pushUserImg' src='../../pic/storeList/dianpu.jpg'></image>
+    <image class='pushUserImg' src='{{pushDetail.avatarUrl}}'></image>
   </view>
-  <view class='pushUserName'>林业大道</view>
+  <view class='pushUserName'>{{pushDetail.nickName}}</view>
 </view>
 
 <view class="push-detail-text">
-  <text  decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;9月18日中午，《新财富杂志》官方微博通报称，取消方正证券马军等参评“第16届新财富最佳分析师”评选资格，取消相关投票人的投票资格。当日下午，就被指通过饭局拉票一事，马军通过短信向记者回应称：“(饭局是)纯朋友聚会，后面会统一回复，清者自清。”
-网传“饭局视频”的主角是：方正证券研究所副所长、通信互联网首席分析师马军，方正证券通信互联网行业分析师廖蕾，宝盈基金前总监刘丰元。
-其中，刘丰元向媒体还原了当时的场景。他说：“饭局不是我组的，也不是马军组的。而是马军到深圳后，一个朋友召集吃饭。这个朋友就叫上了我，我又喊了两个人。”
-“这个饭局是朋友之间的私人聚会，饭局参加者当中有做实业的，有做私募的，有某媒体工作人员，很多都是认识多年的朋友。我自己是2008年离开公募的，连私募产品都没发，现在就是一名个人投资者，没有新财富分析师的投票权。”
-对于是否构成新财富拜票，刘丰元予以否认：“在当日参与饭局的十多人当中，可能仅一人有新财富分析师投票权。为了这一票而组织如此大的一个饭局，绕的圈子未免太大了。而且，在这样一个大饭局中，不太可能有太多的私下交易。”
-“我比较好喝酒，喝高了之后就喜欢恶搞。马军也是认识多年的朋友，他性格和我一样也比较豪爽，我们就一起恶搞。”
-“和廖蕾也是恶搞，就像投资人对股市的关系，想离开不能离开，想爱不能爱，就有了搂一下又放开，搂一下又放开的恶搞。”
-9月19日，“方正证券另类饭局”不雅视频女当事人廖蕾回应媒体称，公司正在调查，但视频中男子无投票权，饭局上的人也基本没投票权，只是场朋友聚会。
-原标题：分析师饭局上了娱乐圈的头条！当事人回应：只是喝高以后的恶搞
+  <text  decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{pushDetail.pushDetail}}
  </text>
 </view>
 
@@ -25,5 +17,18 @@
   <view class="push-detail-bottom-split">|</view>
   <view class="push-detail-bottom-item">点赞
     <text decode="{{true}}" space="{{true}}" class="push-detail-bottom-num">&nbsp;93&nbsp;</text>
+  </view>
+</view>
+
+<view class="reply-item" hover-class="weui-cell_active"  data-id='{{item.id}}'  bindtap='pushDetailPage'>
+  <view class='reply-img'>
+    <image class='replyImg' src='{{item.avatarUrl}}'></image>
+  </view>
+  <view class='reply-detail'>
+    <view class='reply-name'>名字</view>
+    <view class='reply-text'>别瞎说</view>
+    <view class="reply-time">时间
+      <text decode="{{true}}" space="{{true}}" class='reply-huifu'>&nbsp;234回复&nbsp;</text>
+    </view>
   </view>
 </view>

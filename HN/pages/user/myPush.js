@@ -7,7 +7,7 @@ Page({
    */
   data: {
     openId:'',
-    pushList: [] 
+    pushList: []  
   },
   cancelPush: function(e){
     var that = this;

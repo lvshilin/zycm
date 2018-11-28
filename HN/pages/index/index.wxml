@@ -30,28 +30,6 @@
   <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:25rpx;'>最新公告：发表内容切勿有关政治，色情，赌博等相关违法内容</view>
 </view>
 
-<view class="weui-panel__bd">
-  <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap='postDetail'>
-    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-      <image class="weui-media-box__thumb" src="{{icon60}}" />
-    </view>
-    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-      <view class="weui-media-box__title" style='font-size:25rpx;'>
-        <text style='color:red;'>打听求助#</text>标题一</view>
-      <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
-    </view>
-  </view>
-  <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-      <image class="weui-media-box__thumb" src="{{icon60}}" />
-    </view>
-    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-      <view class="weui-media-box__title" style='font-size:25rpx;'>
-        <text style='color:red;'>求职招聘#</text>标题二</view>
-      <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
-    </view>
-  </view>
-</view>
 <view class="weui-footer">
   <view class="weui-footer__links">
     <view  class="weui-footer__link">周瑜网络传媒</view>

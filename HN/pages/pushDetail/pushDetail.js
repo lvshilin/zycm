@@ -5,14 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+   id:'',
+   pushDetail:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id);
+    this.data.id = options.id 
   },
 
   /**
@@ -26,6 +27,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+    var that = this;
+    console.log(this.data.id);
+    wx.request({
+      url: 'http://localhost:8084/zycm-we/push/queryPushDetailById.do',
+      method: 'POST',
+      data: {
+        id: this.data.id,
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        that.setData({
+          pushDetail: res.data.data
+        })
+      }
+    })
   },
 
   /**

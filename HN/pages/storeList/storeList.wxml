@@ -28,7 +28,7 @@
    </view>
 </view>
 
-  <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-id='{{item.id}}' wx:for="{{storeList}}">
+  <view class="store-item" hover-class="weui-cell_active" bindtap='queryStoreDetail' data-storeId='{{item.id}}' wx:for="{{storeList}}">
     <view class='store-img'>
       <image class='storeImg' src='{{item.storeImg}}'></image>
     </view>

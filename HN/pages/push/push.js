@@ -77,13 +77,11 @@ Page({
     })
   },
   push: function(){
-    console.log('点击了发布');
     wx.navigateTo({
-      url: '../../pages/newPush/newPush',
+      url: '../../pages/push/newPush',
     })
   },
   pushDetailPage: function(e){
-    console.log(e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '../../pages/pushDetail/pushDetail?id='+e.currentTarget.dataset.id,
     })

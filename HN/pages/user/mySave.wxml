@@ -1,38 +1,12 @@
-<view class="my-save-div">
+<view class="my-save-div" wx:for="{{storeList}}">
   <view class="my-save-imgDiv">
-    <image class="my-save-img" src='../../pic/storeList/dianpu.jpg'></image>
+    <image class="my-save-img" src='{{item.storeImg}}'></image>
   </view>
   <view class="my-save-detail">
-    <view style=' font-size: 30rpx;'>林业局电信营业厅</view>
-    <view style=' font-size: 25rpx;'>3人收藏了本店|818km</view>
+    <view style=' font-size: 30rpx;'>{{item.storeName}}</view>
+    <view style=' font-size: 25rpx;'>{{item.saveNum}}人收藏了本店|818km</view>
   </view>
   <view class="my-save-btn" >
-    <image bindtap='cancelSave' src='../../pic/quxiaoshoucang.png'></image>
-  </view>
-</view>
-
-<view class="my-save-div">
-  <view class="my-save-imgDiv">
-    <image class="my-save-img" src='../../pic/storeList/dianpu.jpg'></image>
-  </view>
-  <view class="my-save-detail">
-    <view style=' font-size: 30rpx;'>林业局电信营业厅</view>
-    <view style=' font-size: 25rpx;'>3人收藏了本店|818km</view>
-  </view>
-  <view class="my-save-btn" >
-    <image bindtap='cancelSave' src='../../pic/quxiaoshoucang.png'></image>
-  </view>
-</view>
-
-<view class="my-save-div">
-  <view class="my-save-imgDiv">
-    <image class="my-save-img" src='../../pic/storeList/dianpu.jpg'></image>
-  </view>
-  <view class="my-save-detail">
-    <view style=' font-size: 30rpx;'>林业局电信营业厅</view>
-    <view style=' font-size: 25rpx;'>3人收藏了本店|818km</view>
-  </view>
-  <view class="my-save-btn" >
-    <image bindtap='cancelSave' src='../../pic/quxiaoshoucang.png'></image>
+    <image bindtap='cancelSave' data-id='{{item.id}}' src='../../pic/quxiaoshoucang.png'></image>
   </view>
 </view>
