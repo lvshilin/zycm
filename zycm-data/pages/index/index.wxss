@@ -1,6 +1,6 @@
 .itemList{
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
   width: 96%;
 }
 .itemDiv{
