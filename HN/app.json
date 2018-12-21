@@ -1,11 +1,11 @@
 {
   "cloud":true,
   "pages":[
+    "pages/index/index",
     "pages/user/user",
     "pages/storeList/storeList",
     "pages/join/join",
     "pages/join/msg_success",
-    "pages/index/index",
     "pages/auth/auth",
     "pages/user/myPush",
     "pages/user/myLike",

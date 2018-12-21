@@ -21,5 +21,15 @@ Page({
     wx.navigateTo({
       url: '../../pages/item/cangtousi'
     })
+  },
+  ypss: function() {
+    wx.navigateTo({
+      url: '../../pages/item/yunpansousuo'
+    })  
+  },
+  swgwsm: function () {
+    wx.navigateTo({
+      url: '../../pages/item/shiwangeweishenme'
+    })
   }
 })

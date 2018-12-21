@@ -96,12 +96,13 @@ Page({
         var cloudPath = Date.parse(new Date());
         wx.uploadFile({
           // 指定上传到的云路径
-          url: 'http://localhost:8084/zycm-we/push/uploadPushPic.do',
+          url: 'http://localhost:8084/zycm-we/uploadPic.do?fileType=push',
           // 指定要上传的文件的小程序临时文件路径
           filePath: res.tempFilePaths[0],
           name: 'file',
           formData: {
-            'cloudPath': cloudPath
+            'cloudPath': cloudPath,
+            'fileType': 'push'
           },
           // 成功回调
           success: function(res) {

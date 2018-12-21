@@ -23,4 +23,16 @@
       <view class="itemText">藏头诗生成</view>
     </view>
   </view>
+  <view class='itemDiv' bindtap='ypss'>
+    <view class='itemBorder'>
+      <image src='../../pic/index/yunpansousuo.png'></image>
+      <view class="itemText">云盘搜索</view>
+    </view>
+  </view>
+   <view class='itemDiv' bindtap='swgwsm'>
+    <view class='itemBorder'>
+      <image src='../../pic/index/shiwangeweishenme.png'></image>
+      <view class="itemText">十万个为什么</view>
+    </view>
+  </view>
 </view>

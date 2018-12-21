@@ -1,6 +1,6 @@
 // pages/item/cejixiong.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -58,7 +58,7 @@ Page({
     }
     if (this.data.testType==1){
       wx.request({
-        url: 'http://localhost:8087/cejixiong-1',
+        url: app.config.host + '/cejixiong-1',
         method: 'GET',
         data: {
           surname: this.data.surname,
@@ -72,7 +72,7 @@ Page({
           } else {
             wx.showModal({
               title: '提示',
-              content: res.data.message,
+              content: res.data.data,
               showCancel: false
             })
           }

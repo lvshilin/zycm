@@ -3,6 +3,8 @@
     "pages/index/index",
     "pages/user/user",
     "pages/item/english",
+    "pages/item/yunpansousuo",
+    "pages/item/shiwangeweishenme",
     "pages/item/cejixiong",
     "pages/item/cangtousi",
     "pages/auth/auth"

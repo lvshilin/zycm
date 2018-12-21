@@ -1,11 +1,18 @@
-// pages/item/item.js
+// pages/item/shiwangeweishenme.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    keyword:'',
+    page:'',
+  },
+  getWd: function (e) {
+    this.data.keyword = e.detail.value;
+  },
+  getPage: function (e) {
+    this.data.page = e.detail.value;
   },
 
   /**

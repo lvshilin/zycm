@@ -1,6 +1,6 @@
 // pages/item/english.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -10,7 +10,7 @@ Page({
   updateEnglish: function() {
     var that = this;
     wx.request({
-      url: 'http://localhost:8087/english',
+      url: app.config.host+'/english',
       method: 'GET',
       data: {
         count: 5,
@@ -51,7 +51,7 @@ Page({
   onShow: function() {
     var that = this;
     wx.request({
-      url: 'http://localhost:8087/english',
+      url: app.config.host+'/english',
       method: 'GET',
       data: {
         count: 5,

@@ -27,7 +27,7 @@
 </view>
 
 <view class='menuDiv'>
-  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:25rpx;'>最新公告：发表内容切勿有关政治，色情，赌博等相关违法内容</view>
+  <text selectable='true' style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:25rpx;'>最新公告：发表内容切勿有关政治，色情，赌博等相关违法内容</text>
 </view>
 
 <view class="weui-footer">

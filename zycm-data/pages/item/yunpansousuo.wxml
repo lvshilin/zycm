@@ -1,0 +1,25 @@
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">关键字</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getWd' placeholder="请输入云盘查询关键字(必填)" />
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">第几页</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getPage' placeholder="不填默认返回第一页" />
+    </view>
+  </view>
+</view>
+<button class='bt' bindtap='query'>点击查询</button>
+
+<view class='itemDiv' wx:for="{{neirong}}">
+  <text selectable='true' style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;'>{{item.title}}</text>
+  <view></view>
+ <text selectable='true' style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;'>下载地址：http://pdd.19mi.net/go/{{item.dizhi}}</text>
+</view>

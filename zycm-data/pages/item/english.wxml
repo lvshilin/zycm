@@ -1,5 +1,6 @@
 <button class='bt' bindtap='updateEnglish'>更换语录</button>
 <view class='itemDiv' wx:for="{{itemList}}">
-  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:45rpx;'>{{item.chinese}}</view>
-  <view style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:40rpx;'>{{item.english}}</view>
+  <text selectable='true' style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;'>{{item.chinese}}</text>
+  <view></view>
+  <text selectable='true' style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:30rpx;'>{{item.english}}</text>
 </view>

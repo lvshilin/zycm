@@ -32,7 +32,6 @@ Page({
   },
   onShow: function() {
     this.data.openId = app.data.openId;
-    console.log("index" + this.data.openId)
   },
   getUserInfo: function(e) {},
   /**
