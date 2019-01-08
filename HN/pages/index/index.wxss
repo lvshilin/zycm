@@ -1,3 +1,17 @@
+.countDiv{
+  margin:2%;
+  height: auto;
+  width: 96%;
+  border: 1rpx solid #e6e6e6;
+  border-radius: 25rpx;
+  display: flex;
+  flex-direction: row;
+}
+.countText{
+   width: 50%;
+   color: #0061b2;
+   text-align: center;
+}
 .menuDiv{
   margin:2%;
   height: auto;

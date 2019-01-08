@@ -1,4 +1,5 @@
-// pages/push/push.js
+const app = getApp();
+
 Page({
 
   /**
@@ -41,7 +42,7 @@ Page({
       title: '加载中',
     });
     wx.request({
-      url: 'http://localhost:8084/zycm-we/push/queryPushListByType.do',
+      url: app.config.host + 'push/queryPushListByType.do',
       method: 'POST',
       data: {
         pushType: e.target.dataset.vtext,
@@ -55,13 +56,13 @@ Page({
       }
     })
   },
-  search: function(){
+  search: function(){ 
     wx.showLoading({
       title: '加载中',
     });
     var that = this;
     wx.request({
-      url: 'http://localhost:8084/zycm-we/push/queryPushListBySearch.do',
+      url: app.config.host + 'push/queryPushListBySearch.do',
       method: 'POST',
       data: {
         searchText: that.data.inputVal,
@@ -106,7 +107,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8084/zycm-we/push/queryPushListByType.do',
+      url: app.config.host + 'push/queryPushListByType.do',
       method: 'POST',
       data: {
         pushType: null,

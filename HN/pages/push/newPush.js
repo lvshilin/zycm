@@ -1,5 +1,5 @@
 const app = getApp();
-Page({
+Page({ 
   /**
    * 页面的初始数据
    */
@@ -9,6 +9,7 @@ Page({
     pushTitle:'',
     pushType:'',
     pushDetail:'',
+    pushImgs:[],
     isHide:'0',
     files: [],
     openId:''
@@ -42,26 +43,39 @@ Page({
   switchChange: function(e){
     console.log(e.detail.value);
     if (e.detail.value){
-      this.isHide = '1'
+      this.data.isHide = '1'
     }else{
-      this.isHide = '0'
+      this.data.isHide = '0'
     }
   },
   commitPush: function(){
     var that = this;
+    if (that.data.pushTitle == '' || that.data.pushTitle == null) {
+      app.commonModal("提示", "请输入帖子标题");
+      return;
+    }
+    if (that.data.pushTypeIndex == 0) {
+      app.commonModal("提示", "请选择帖子类型");
+      return;
+    }
+    if (that.data.pushDetail == '' || that.data.pushDetail == null) {
+      app.commonModal("提示", "请输入帖子内容");
+      return;
+    }
     wx.showModal({
       title: '提示',
       content: '请确认您发布的内容，请勿涉及到政治色情等违法内容',
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: 'http://localhost:8084/zycm-we/push/addNewPush.do',
+            url: app.config.host + 'push/addNewPush.do',
             method: 'POST',
             data: {
               openId: that.data.openId,
               pushTitle: that.data.pushTitle,
               pushType: that.data.pushType,
               pushDetail: that.data.pushDetail,
+              pushImgs: that.data.pushImgs,
               isHide: that.data.isHide
             },
             success: function (res) {
@@ -82,13 +96,21 @@ Page({
     })
   },
   chooseImage: function (e) {
+    if (this.data.files.length == 4) {
+      wx.showModal({
+        title: '提示',
+        content: '只能上传4张图片',
+        showCancel: false
+      })
+      return;
+    }
     var that = this;
     wx.chooseImage({
+      count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        console.log(res.tempFilePaths);
         that.setData({
           files: that.data.files.concat(res.tempFilePaths)
         });
@@ -96,7 +118,7 @@ Page({
         var cloudPath = Date.parse(new Date());
         wx.uploadFile({
           // 指定上传到的云路径
-          url: 'http://localhost:8084/zycm-we/uploadPic.do?fileType=push',
+          url: app.config.host + 'uploadPic.do?fileType=push&openId=' + app.data.openId,
           // 指定要上传的文件的小程序临时文件路径
           filePath: res.tempFilePaths[0],
           name: 'file',
@@ -106,7 +128,9 @@ Page({
           },
           // 成功回调
           success: function(res) {
-            console.log(res)
+            if (res.statusCode==200){
+              that.data.pushImgs.push(res.data.replace(/"/g, ""));
+            }
           },
           fail: function(res){
             console.log(res);
@@ -116,12 +140,50 @@ Page({
     })
   },
   previewImage: function (e) {
-    console.log(e.currentTarget.id);
-    console.log(this.data.files);
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
       urls: this.data.files // 需要预览的图片http链接列表
     })
+  },
+  delFile: function () {
+    var that = this;
+    var lastPushImg = that.data.pushImgs[that.data.pushImgs.length-1]
+    if (lastPushImg == null || lastPushImg == '') {
+      wx.showModal({
+        title: '提示',
+        content: '还没有上传图片',
+        showCancel: false
+      })
+      return;
+    } else {
+      wx.request({
+        url: app.config.host + 'delFile.do',
+        method: 'GET',
+        data: {
+          path: lastPushImg
+        },
+        success: function (res) {
+          console.log(res.data.data);
+          if (res.data.data) {
+            wx.showToast({
+              title: res.data.message,
+              icon: 'success',
+              duration: 2000
+            })
+            that.data.files.splice(that.data.files.length-1, 1);
+            that.data.pushImgs.splice(that.data.pushImgs.length - 1, 1);
+            that.setData({
+              files: that.data.files
+            })
+          } else {
+            wx.showToast({
+              title: res.data.message,
+              duration: 2000
+            })
+          }
+        }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

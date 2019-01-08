@@ -14,8 +14,11 @@ Page({
    */
   data: {
     userInfo: {},
-    openId:'',
+    openId: '',
     hasUserInfo: false,
+    integral: '0',
+    signNum: '0',
+    lastSignTimeStr: null
   },
 
   /**
@@ -39,31 +42,6 @@ Page({
         }
       })
     }
- 
-
-
-
-    // wx.chooseImage({
-    //   count: 1, // 默认9
-    //   sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-    //   sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-    //   success: function (res) {
-    //     var tempFilePaths = res.tempFilePaths;
-    //     console.log(tempFilePaths);
-    //     uploadImage(
-    //       {
-    //         filePath: tempFilePaths[0],
-    //         dir: 'imagessss/',
-    //         success: function (res) {
-    //           console.log(res)
-    //         },
-    //         fail: function (res) {
-    //           console.log("上传失败")
-    //           console.log(res)
-    //         }
-    //       })
-    //   },
-    // })
   },
 
   /**
@@ -72,44 +50,62 @@ Page({
   onReady: function() {
 
   },
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     wx.stopPullDownRefresh()
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    var that = this;
     this.data.openId = app.data.openId;
-    console.log(this.data.openId);
     var latitude = 0;
     var longitude = 0;
-    wx.getLocation({
-      altitude:true,
-      success: function(res) {
-        // 调用接口
-        demo.reverseGeocoder({
-          location: {
-            'latitude': res.latitude,
-            'longitude': res.longitude
-          },
-          success: function (res) {
-            console.log(res);
-          },
-          fail: function (res) {
-            console.log(res);
-          }
-        });
+    this.loadUserSign();
+    // wx.getLocation({
+    //   altitude:true,
+    //   success: function(res) {
+    //     // 调用接口
+    //     demo.reverseGeocoder({
+    //       location: {
+    //         'latitude': res.latitude,
+    //         'longitude': res.longitude
+    //       },
+    //       success: function (res) {
+    //         console.log(res);
+    //       },
+    //       fail: function (res) {
+    //         console.log(res);
+    //       }
+    //     });
+    //   },
+    // })
+  },
+  loadUserSign: function() {
+    var that = this;
+    wx.request({
+      url: app.config.host + 'user/queryUserSignByOpenId.do',
+      method: 'POST',
+      data: {
+        openId: app.data.openId,
       },
+      success: function(res) {
+        console.log(res)
+        that.setData({
+          integral: res.data.data.integral,
+          signNum: res.data.data.signNum,
+          lastSignTimeStr: res.data.data.lastSignTimeStr
+        })
+      }
     })
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
 
   },
-  toShare: function(){
+  toShare: function() {
     console.log('点击转发了')
   },
   /**
@@ -132,46 +128,81 @@ Page({
       console.log('用户拒绝了授权');
     }
   },
-  toMyPush: function(){
+  toMyPush: function() {
     wx.navigateTo({
       url: '../../pages/user/myPush',
     })
   },
-  toMySave: function(){
+  toMyReply: function() {
+    wx.navigateTo({
+      url: '../../pages/user/myReply',
+    })
+  },
+  toMySave: function() {
     wx.navigateTo({
       url: '../../pages/user/mySave',
     })
   },
-  toJoin: function () {
-    wx.navigateTo({
-      url: '../../pages/join/join',
+  toJoin: function() {
+    wx.request({
+      url: app.config.host + 'store/queryUserIsHaveStore.do',
+      method: 'POST',
+      data: {
+        openId: app.data.openId,
+      },
+      success: function(res) {
+        console.log(res);
+        if (res.data.data) {
+          wx.navigateTo({
+            url: '../../pages/join/join',
+          })
+        }else{
+          app.commonModal('提示','用户已经申请过商店了');
+        }
+      }
     })
   },
-  toMyLike: function () {
+  toMyLike: function() {
     wx.navigateTo({
       url: '../../pages/user/myLike',
     })
   },
   toManager: function() {
-    wx.navigateTo({
-      url: '../../pages/manager/login',
+    wx.request({
+      url: app.config.host + 'store/queryUserIsHaveStore.do',
+      method: 'POST',
+      data: {
+        openId: app.data.openId,
+      },
+      success: function (res) {
+        if (!res.data.data) {
+          wx.navigateTo({
+            url: '../../pages/manager/manager',
+          })
+        } else {
+          app.commonModal('提示', '用户还没有申请自己的商店');
+        }
+      }
     })
   },
   signBtn: function() {
+    var that = this;
     wx.request({
-      url: 'http://localhost:8084/zycm-we/user/addSignRecord.do',
+      url: app.config.host + 'user/addSignRecord.do',
       method: 'POST',
       data: {
         openId: this.data.openId,
       },
-      success: function (res) {
+      success: function(res) {
         wx.showModal({
           title: '提示',
           content: res.data.message,
           showCancel: false,
-          success(res) {
-          }
+          success(res) {}
         })
+        if (res.data.code == 200) {
+          that.loadUserSign();
+        }
       }
     })
   }

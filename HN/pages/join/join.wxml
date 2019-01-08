@@ -9,6 +9,24 @@
     </view>
   </view>
 
+   <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">联系电话</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getStorePhone' placeholder="请输入商铺联系电话" />
+    </view>
+  </view>
+
+   <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">地址</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getStoreAddress' placeholder="请输入商铺地址" />
+    </view>
+  </view>
+
   <view class="weui-cells weui-cells_after-title">
     <radio-group bindchange="radioChange">
       <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
@@ -20,15 +38,6 @@
         </view>
       </label>
     </radio-group>
-  </view>
-
-
-  <view class="weui-cell weui-cell_select">
-    <view class="weui-cell__bd">
-      <picker bindchange="pushTypeChange" value="{{pushTypeIndex}}" range="{{pushTypeList}}">
-        <view class="weui-select">{{pushTypeList[pushTypeIndex]}}</view>
-      </picker>
-    </view>
   </view>
 </view>
 
@@ -56,7 +65,7 @@
               </view>
             </block>
             <view class="weui-uploader__file">
-              <image class="weui-uploader__img" src="../../pic/push/picUpload.png" mode="aspectFill" />
+              <image bindtap='delFile' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
             </view>
           </view>
           <view class="weui-uploader__input-box">

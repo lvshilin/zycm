@@ -35,4 +35,10 @@
       <view class="itemText">十万个为什么</view>
     </view>
   </view>
+  <view class='itemDiv' bindtap='xhy'>
+    <view class='itemBorder'>
+      <image src='../../pic/index/xiehouyu.png'></image>
+      <view class="itemText">歇后语</view>
+    </view>
+  </view>
 </view>

@@ -11,15 +11,19 @@
 </scroll-view>
 
 <view class="push-item" hover-class="weui-cell_active"  data-id='{{item.id}}' wx:for="{{pushList}}" bindtap='pushDetailPage'>
-  <view class='push-img'>
+  <view class='push-img' wx:if="{{item.isHide=='0'}}">
     <image class='pushImg' src='{{item.avatarUrl}}'></image>
+  </view>
+    <view class='push-img' wx:else>
+    <image class='pushImg' src='../../pic/push/niming.png'></image>
   </view>
   <view class='push-detail'>
     <view class='push-title'>
       <text style='color:red;'>{{item.dictText}}#</text>{{item.pushTitle}}</view>
     <view class='push-text'>{{item.pushDetail}}</view>
     <view class="push-num">{{item.createTimeStr}}
-      <text decode="{{true}}" space="{{true}}" class='push-huifu'>&nbsp;234评论&nbsp;</text>
+      <text decode="{{true}}" space="{{true}}" class='push-huifu'>&nbsp;{{item.replyNum}}评论&nbsp;</text>
+      <text decode="{{true}}" space="{{true}}" class='push-zhiding' wx:if="{{item.isTop=='1'}}">&nbsp;精&nbsp;</text>
     </view>
   </view>
 </view>

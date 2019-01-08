@@ -3,3 +3,14 @@ page{
     font-size: 16px;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 60%;
+}
+.oldStoreImgDiv{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}

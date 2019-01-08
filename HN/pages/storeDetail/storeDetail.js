@@ -7,12 +7,15 @@ Page({
   data: {
     indexUrls: [
       "../../pic/index/1.jpg",
-      "../../pic/index/2.jpg"
+      "../../pic/index/2.png"
     ],
+    storeDetail: null,
     openId: null,
     isSave: null,
     storeId: null,
-    id:null
+    isSaveFlag: null,
+    id:null,
+    phoneCall:''
   },
   shoucang: function() {
     var that = this;
@@ -23,7 +26,7 @@ Page({
       isSaveFlag = '1'
     }
     wx.request({
-      url: 'http://localhost:8084/zycm-we/store/addStoreSaveByOpenId.do',
+      url: app.config.host + 'store/addStoreSaveByOpenId.do',
       method: 'POST',
       data: {
         id: that.data.id,
@@ -51,7 +54,11 @@ Page({
     }
 
   },
-
+  call: function(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.phoneCall,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -73,7 +80,21 @@ Page({
     this.data.openId = app.data.openId;
     var that = this;
     wx.request({
-      url: 'http://localhost:8084/zycm-we/store/queryStoreAndUser.do',
+      url: app.config.host+ 'store/queryStoreDetailById.do',
+      method:'POST',
+      data:{
+        id: that.data.storeId
+      },
+      success: function(res){
+        that.setData({
+          storeDetail: res.data.data
+        })
+        that.data.phoneCall = res.data.data.storePhone
+        console.log(that.data.storeDetail);
+      }
+    })
+    wx.request({
+      url: app.config.host + 'store/queryStoreAndUser.do',
       method: 'POST',
       data: {
         openId: that.data.openId,
@@ -82,7 +103,7 @@ Page({
       success: function (res) {
         if (res.data.data!=null){
           that.data.id =  res.data.data.id
-          if(that.data.isSave==1){
+          if (res.data.data.isSave==1){
             that.setData({
               isSave: true
             })

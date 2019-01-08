@@ -1,7 +1,11 @@
-<swiper indicator-dots="true" autoplay="true" style='width:100%;height:400rpx'>
+<view class='countDiv'>
+  <view class='countText'>帖子:{{pushCountNum}}</view>
+  <view class='countText'>授权成员:{{userCountNum}}</view>
+</view>
+<swiper indicator-dots="true" autoplay="true" style='width:100%;height:350rpx'>
   <block wx:for="{{indexUrls}}">
     <swiper-item>
-      <image src="{{item}}" style='width:100%;height:400rpx' />
+      <image bindtap='previewImage' data-url="{{item}}" src="{{item}}" style='width:100%;height:350rpx' />
     </swiper-item>
   </block>
 </swiper>

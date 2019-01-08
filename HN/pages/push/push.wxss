@@ -75,7 +75,7 @@ border-radius: 10rpx;
   padding-right: 20rpx;
 }
 .push-title{
-  color: black;
+  color: #3dade7;
   font-size: 30rpx;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -84,7 +84,7 @@ border-radius: 10rpx;
   -webkit-line-clamp: 1;
 }
 .push-text{
-  color: gray;
+  color: black;
   line-height: 1.2;
   font-size: 30rpx;
   overflow: hidden;
@@ -99,6 +99,10 @@ border-radius: 10rpx;
 }
 .push-huifu{
   background-color: rebeccapurple;
+  color: white;
+}
+.push-zhiding{
+  background-color: red;
   color: white;
 }
 .push_icon image{

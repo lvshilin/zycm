@@ -16,25 +16,21 @@ Page({
       content: '点击将删除该帖子',
       success(res) {
         if (res.confirm) {
-          wx.showLoading({
-            title: '加载中',
-          });
           wx.request({
-            url: 'http://localhost:8084/zycm-we/push/deletePushById.do',
+            url: app.config.host + 'push/deletePushById.do',
             method: 'POST',
             data: {
               id: e.currentTarget.dataset.id,
             },
             success: function (res) {
-              wx.hideLoading();
               wx.showToast({
                 title: res.data.data,
                 icon: 'success',
                 duration: 2000
               })
+              that.loadDataList();
             }
           })
-          that.loadDataList();
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
@@ -45,18 +41,21 @@ Page({
     var that = this;
     this.data.openId = app.data.openId;
     wx.request({
-      url: 'http://localhost:8084/zycm-we/push/queryPushListByOpenId.do',
+      url: app.config.host + 'push/queryPushListByOpenId.do',
       method: 'POST',
       data: {
         openId: this.data.openId,
       },
       success: function (res) {
-        console.log(res);
-        wx.hideLoading();
         that.setData({
           pushList: res.data.data
         })
       }
+    })
+  },
+  pushDetailPage: function (e) {
+    wx.navigateTo({
+      url: '../../pages/pushDetail/pushDetail?id=' + e.currentTarget.dataset.id,
     })
   },
   /**

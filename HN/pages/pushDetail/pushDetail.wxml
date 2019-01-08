@@ -1,34 +1,63 @@
-<view class='push-detail-head'>
+<view class='push-detail-head' wx:if="{{pushDetail.isHide=='0'}}">
   <view class='push-user-img'>
     <image class='pushUserImg' src='{{pushDetail.avatarUrl}}'></image>
   </view>
   <view class='pushUserName'>{{pushDetail.nickName}}</view>
 </view>
+<view class='push-detail-head' wx:else>
+  <view class='push-user-img'>
+    <image class='pushUserImg' src='../../pic/push/niming.png'></image>
+  </view>
+  <view class='pushUserName'>匿名用户</view>
+</view>
 
 <view class="push-detail-text">
   <text  decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{pushDetail.pushDetail}}
  </text>
+  <view class='push-detail-desc'  wx:if="{{pushImgsList.length>0}}">
+    <image class='push-detail-desc-img' data-url='{{item}}' bindtap='previewImage'  src='{{item}}' wx:for="{{pushImgsList}}"></image>
+  </view>
 </view>
 
 <view class="push-detail-bottom">
   <view class="push-detail-bottom-item">评论
-    <text decode="{{true}}" space="{{true}}" class="push-detail-bottom-num">&nbsp;2393&nbsp;</text>
+    <text decode="{{true}}" space="{{true}}" class="push-detail-bottom-num">&nbsp;{{replyPushList.length}}&nbsp;</text>
   </view>
   <view class="push-detail-bottom-split">|</view>
   <view class="push-detail-bottom-item">点赞
     <text decode="{{true}}" space="{{true}}" class="push-detail-bottom-num">&nbsp;93&nbsp;</text>
   </view>
+  <button style='text-align: center; width: 30%;' open-type="share">
+    <image class="user-menu-img" src='../../pic/user/zhuanfa.png'></image>
+  </button>
 </view>
 
-<view class="reply-item" hover-class="weui-cell_active"  data-id='{{item.id}}'  bindtap='pushDetailPage'>
+
+<view class="reply-item" hover-class="weui-cell_active" wx:for="{{replyPushList}}"  data-id='{{item.id}}' data-nickname='{{item.nickName}}'  bindtap='replyClick'>
   <view class='reply-img'>
     <image class='replyImg' src='{{item.avatarUrl}}'></image>
   </view>
   <view class='reply-detail'>
-    <view class='reply-name'>名字</view>
-    <view class='reply-text'>别瞎说</view>
-    <view class="reply-time">时间
-      <text decode="{{true}}" space="{{true}}" class='reply-huifu'>&nbsp;234回复&nbsp;</text>
+    <view class='reply-name'>{{item.nickName}}</view>
+    <view class='reply-text'>{{item.replyText}}</view>
+    <view class="reply-time">{{item.createTimeStr}}
+      <!-- <text decode="{{true}}" space="{{true}}" class='reply-huifu'>&nbsp;234回复&nbsp;</text> -->
     </view>
   </view>
 </view>
+<view style='height:100rpx;'></view>
+<view class="push-huifu-bottom">
+  <view class='push-huifu-bottom-img'>
+    <image bindtap='shoucang' class='push-huifu-bottom-logo' src='../../pic/shoucang2.png' wx:if="{{isSave}}"></image>
+    <image bindtap='shoucang' class='push-huifu-bottom-logo' src='../../pic/shoucang1.png' wx:else></image>
+  </view>
+  <view class='push-huifu-bottom-text'>
+    <input class="weui-input" bindinput='getText' value='{{replyText}}' placeholder="请输入回复内容" />
+  </view>
+  <view class='push-huifu-bottom-img'>
+    <image bindtap='reply' class='push-huifu-bottom-logo' src='../../pic/pinglun.png'></image>
+  </view>
+</view>
+
+
+

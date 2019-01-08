@@ -1,15 +1,21 @@
-// pages/storeList/storeList.js
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     indexUrls: [
       "../../pic/index/1.jpg",
-      "../../pic/index/2.jpg"
+      "../../pic/index/2.png"
     ],
     storeList:[],
+    inputVal: ''
+  },
+  searchInput: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
+    console.log(this.data.inputVal);
   },
   queryStoreDetail: function(e){
     var storeId = e.currentTarget.dataset.storeid;
@@ -37,7 +43,7 @@ Page({
   onShow: function() {
     var that = this;
     wx.request({
-      url: 'http://localhost:8084/zycm-we/store/queryStoreList.do',
+      url: app.config.host + 'store/queryStoreList.do',
       method: 'POST',
       data: {
       },
@@ -48,10 +54,30 @@ Page({
       }
     })
   },
+  search: function () { 
+    wx.showLoading({
+      title: '加载中',
+    });
+    var that = this;
+    wx.request({
+      url: app.config.host + 'store/queryStoreListBySearch.do',
+      method: 'POST',
+      data: {
+        searchText: that.data.inputVal,
+      },
+      success: function (res) {
+        console.log(res);
+        wx.hideLoading();
+        that.setData({
+          storeList: res.data.data
+        })
+      }
+    })
+  },
   queryStoreListByType: function(e){
     var that = this;
     wx.request({
-      url: 'http://localhost:8084/zycm-we/store/queryStoreList.do',
+      url: app.config.host +  'store/queryStoreList.do',
       method: 'POST',
       data: {
         storeType: e.currentTarget.dataset.storetype

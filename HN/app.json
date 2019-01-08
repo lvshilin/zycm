@@ -1,9 +1,11 @@
 {
-  "cloud":true,
+  "cloud":false,
   "pages":[
     "pages/index/index",
-    "pages/user/user",
+    "pages/manager/manager",
     "pages/storeList/storeList",
+    "pages/user/myReply",
+    "pages/user/user",
     "pages/join/join",
     "pages/join/msg_success",
     "pages/auth/auth",
@@ -15,7 +17,6 @@
     "pages/manager/login",
     "pages/pushDetail/pushDetail",
     "pages/storeDetail/storeDetail"
-
   ],
   "window":{
     "backgroundTextStyle":"light",

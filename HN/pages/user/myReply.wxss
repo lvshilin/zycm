@@ -1,4 +1,5 @@
-.my-push-div {
+
+.my-reply-div {
   background-color: white;
   width: 100%;
   height: auto;
@@ -6,7 +7,8 @@
   display: flex;
   flex-direction: row;
 }
-.my-push-item{
+
+.my-reply-item{
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -14,8 +16,8 @@
   padding-left: 10rpx;
   padding-right: 20rpx;
 }
-.my-push-title{
-  color: black;
+.my-reply-title{
+  color: #3dade7;
   font-size: 30rpx;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -23,7 +25,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
-.my-push-text{
+.my-reply-text{
   color: gray;
   line-height: 1.2;
   font-size: 30rpx;
@@ -33,17 +35,17 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
-.my-push-date{
+.my-reply-date{
    color: black;
    font-size: 25rpx;
 }
-.my-push-btn {
+.my-reply-btn {
   margin-top: 25rpx;
   text-align: center;
   width: 20%;
 }
 
-.my-push-btn image {
+.my-reply-btn image {
   width: 70rpx;
   height: 70rpx;
 }

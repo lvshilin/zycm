@@ -14,7 +14,7 @@ Page({
       console.log(e.detail.userInfo);
       this.data.openId = app.data.openId;
       wx.request({
-        url: 'http://localhost:8084/zycm-we/user/addUserDetail.do',
+        url: app.config.host + 'user/addUserDetail.do',
         method: 'POST',
         data: {
           openId: this.data.openId,

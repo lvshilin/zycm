@@ -47,7 +47,7 @@
               </view>
             </block>
             <view class="weui-uploader__file">
-              <image class="weui-uploader__img" src="../../pic/push/picUpload.png" mode="aspectFill" />
+              <image bindtap='delFile' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
             </view>
           </view>
           <view class="weui-uploader__input-box">

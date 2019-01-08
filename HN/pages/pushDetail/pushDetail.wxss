@@ -17,6 +17,7 @@
 .pushUserName {
   margin-top: 20rpx;
   margin-left: 20rpx;
+  color: #3dade7;
 }
 
 .push-detail-text {
@@ -25,7 +26,7 @@
   padding-right: 20rpx;
   padding-bottom: 20rpx;
   border-bottom: 2rpx solid #e6e6e6;
-  font-size: 30rpx;
+  font-size: 35rpx;
 }
 
 .push-detail-bottom {
@@ -38,7 +39,7 @@
 }
 
 .push-detail-bottom-item {
-  width: 48%;
+  width: 39%;
   line-height: 2.5;
 }
 
@@ -53,7 +54,33 @@
   color: white;
 }
 
+.push-detail-desc{
+  padding-top: 10rpx;
+  text-align: center;
+}
+.push-detail-desc-img{
+  margin: 1%;
+  width: 48%;
+  height: 300rpx;
+}
 
+.fenxiang-menu{
+  background-color: white;
+  border-bottom: 1rpx solid #e6e6e6;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+.user-menu-img{
+  padding-left: 15rpx;
+  padding-top: 6rpx;
+  height: 88rpx;
+  width: 88rpx;
+}
+.user-menu-text{
+   padding-left: 15rpx;
+   line-height: 2.5;
+}
 
 .reply-item{
   display: flex;
@@ -77,7 +104,7 @@
   padding-right: 20rpx;
 }
 .reply-name{
-  color: black;
+  color: gray;
   font-size: 30rpx;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -86,7 +113,7 @@
   -webkit-line-clamp: 1;
 }
 .reply-text{
-  color: gray;
+  color: black;
   line-height: 1.2;
   font-size: 30rpx;
   overflow: hidden;
@@ -102,4 +129,27 @@
 .reply-huifu{
   background-color: rebeccapurple;
   color: white;
+}
+.push-huifu-bottom{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  background-color: #e6e6e6;
+  border-top: 1rpx solid #e6e6e6;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  border-radius: 20rpx;
+}
+.push-huifu-bottom-img{
+  text-align: center;
+  width: 15%;
+}
+.push-huifu-bottom-logo{
+  margin-top: 15rpx;
+  height: 70rpx;
+  width: 70rpx;
+}
+.push-huifu-bottom-text{
+  width: 70%;
 }

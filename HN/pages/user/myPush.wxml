@@ -1,11 +1,13 @@
-<view class="my-push-div" wx:for="{{pushList}}">
- <view class='my-push-item'>
-    <view class='my-push-title'>
-      <text style='color:red;'>{{item.dictText}}</text>{{item.pushTitle}}</view>
-    <view class='my-push-text'>{{item.pushDetail}}</view>
-    <view class="my-push-date">{{item.createTimeStr}}</view>
-  </view>
+<view style='margin:2%;height:auto; width:96%; border:1rpx solid #e6e6e6;'>
+  <view class="my-push-div" wx:for="{{pushList}}">
+    <view class='my-push-item' data-id='{{item.id}}' bindtap='pushDetailPage'>
+      <view class='my-push-title'>
+        <text style='color:red;'>{{item.dictText}}</text>{{item.pushTitle}}</view>
+      <view class='my-push-text'>{{item.pushDetail}}</view>
+      <view class="my-push-date">{{item.createTimeStr}}</view>
+    </view>
     <view class="my-push-btn">
-    <image bindtap='cancelPush' data-id='{{item.id}}' src='../../pic/quxiaoshoucang.png'></image>
+      <image bindtap='cancelPush' data-id='{{item.id}}' src='../../pic/shanchu.png'></image>
+    </view>
   </view>
-</view> 
+</view>

@@ -5,12 +5,12 @@ App({
     session_key: null
   },
   onLaunch: function () {
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        traceUser: true,
-      })
+    // if (!wx.cloud) {
+    //   console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+    // } else {
+    //   wx.cloud.init({
+    //     traceUser: true,
+    //   })
       // var that = this;
       // wx.cloud.callFunction({
       //   name: 'getOpenid',
@@ -19,13 +19,15 @@ App({
       //   }
       // })
       this.getOpenIdTap();
-    }
+   // }
   },
   globalData: {
     userInfo: null,
   }, 
   config: {
-    host: "http://localhost:8084/zycm-we/"
+    local: "http://localhost:8084/zycm-we/",
+    host: "https://www.zy-media.cn/zycm-we/",
+    //host: "http://localhost:8084/zycm-we/",
   },
   getOpenIdTap: function () {
     var that = this;
@@ -33,18 +35,20 @@ App({
       success: function (res) {
         wx.request({
           //获取openid接口  
-          url: 'https://api.weixin.qq.com/sns/jscode2session',
+          //url: 'https://api.weixin.qq.com/sns/jscode2session',
+          //url: that.config.host + 'wx/getOpenId.do',
+          url: 'https://www.zy-media.cn/zycm-we/wx/getOpenId.do',
           data: {
-            appid: 'wx3571ddcf3a406f27',
-            secret: 'd4cf729c405ce04c2694416225b7cadf',
+            // appid: 'wx3571ddcf3a406f27',
+            // secret: 'd4cf729c405ce04c2694416225b7cadf',
             js_code: res.code,
-            grant_type: 'authorization_code'
+            // grant_type: 'authorization_code'
           },
           method: 'GET',
           success: function (res) {
-            console.log(res.data)
-            that.data.openId = res.data.openid,
-              that.data.session_key = res.data.session_key
+            console.log(res) 
+            that.data.openId = res.data.data.openid,
+            that.data.session_key = res.data.data.session_key
             console.log(that.data.openId)
             console.log(that.data.session_key)
           }

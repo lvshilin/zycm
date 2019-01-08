@@ -1,123 +1,111 @@
 const app = getApp();
-
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    storeList:[]
+    replyPushList: [],
   },
-  cancelSave: function(e){
+  loadDataList: function () {
+    var that = this;
+    wx.request({
+      url: app.config.local + 'push/queryPushReplyByOpenId.do',
+      method: 'POST',
+      data: {
+        openId: app.data.openId,
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          replyPushList: res.data.data
+        })
+      }
+    })
+  },
+  delMyReply: function(e){
+    console.log(e);
     var that = this;
     wx.showModal({
       title: '请确认?',
-      content: '点击将取消收藏该店铺',
+      content: '点击将删除该回复',
       success(res) {
         if (res.confirm) {
-          wx.showLoading({
-            title: '加载中',
-          });
           wx.request({
-            url: app.config.host + 'store/deleteStoreByopenIdAndStoreId.do',
+            url: app.config.local + 'push/delPushReplyById.do',
             method: 'POST',
             data: {
-              storeId: e.currentTarget.dataset.id,
-              openId: that.data.openId,
+              id: e.currentTarget.dataset.id,
+              pushId: e.currentTarget.dataset.pushid,
             },
             success: function (res) {
-              wx.hideLoading();
+              console.log(res);
               wx.showToast({
                 title: res.data.message,
                 icon: 'success',
                 duration: 2000
               })
+              if (res.data.code == 200) {
+                that.loadDataList();
+              }
             }
           })
-          that.loadDataList();
-        } else if (res.cancel) {
-          console.log('用户点击取消')
         }
       }
-    })
-  },
-  loadDataList: function () {
-    var that = this;
-    this.data.openId = app.data.openId;
-    wx.request({
-      url: app.config.host + 'store/queryStoreListByOpenId.do',
-      method: 'POST',
-      data: {
-        openId: this.data.openId,
-      },
-      success: function (res) {
-        console.log(res);
-        wx.hideLoading();
-        that.setData({
-          storeList: res.data.data
-        })
-      }
-    })
-  },
-  queryStoreDetail: function (e) {
-    var storeId = e.currentTarget.dataset.storeid;
-    wx.navigateTo({
-      url: '../../pages/storeDetail/storeDetail?storeId=' + storeId,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.loadDataList();
+      this.loadDataList();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

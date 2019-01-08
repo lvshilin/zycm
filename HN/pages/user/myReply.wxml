@@ -1,0 +1,13 @@
+<view style='margin:2%;height:auto; width:96%; border:1rpx solid #e6e6e6;'>
+  <view class="my-reply-div" wx:for="{{replyPushList}}">
+    <view class='my-reply-item' data-id='{{item.id}}' bindtap='pushDetailPage'>
+      <view class='my-reply-title'>
+      <text style='color:red;'>回复于帖子:</text>{{item.pushTitle}}</view>
+      <view class='my-reply-text'>{{item.replyText}}</view>
+      <view class="my-reply-date">{{item.createTimeStr}}</view>
+    </view>
+    <view class="my-reply-btn">
+      <image bindtap='delMyReply' data-id='{{item.id}}' data-pushid='{{item.pushId}}' src='../../pic/shanchu.png'></image>
+    </view>
+  </view>
+</view>
