@@ -25,9 +25,9 @@ App({
     userInfo: null,
   }, 
   config: {
-    local: "http://localhost:8084/zycm-we/",
-    host: "https://www.zy-media.cn/zycm-we/",
+    //host: "https://www.zy-media.cn/zycm-we/",
     //host: "http://localhost:8084/zycm-we/",
+    host: "https://www.zy-media.cn/zycm-we/",
   },
   getOpenIdTap: function () {
     var that = this;

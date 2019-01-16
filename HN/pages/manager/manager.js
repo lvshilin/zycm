@@ -25,10 +25,11 @@ Page({
     storeAddress: '',
     id: '',
     files: [],
-    envfiles:[],
+    envfiles: [],
     oldStoreImg: null,
     storeImg: null,
     storeEnv: [],
+    storeEnvRecord: [],
   },
   radioChange: function(e) {
     this.data.storeType = e.detail.value;
@@ -40,7 +41,7 @@ Page({
       radioItems: radioItems
     });
   },
-  chooseImage: function(e) {
+  chooseImageImg: function(e) {
     if (this.data.files.length == 1) {
       wx.showModal({
         title: '提示',
@@ -63,7 +64,7 @@ Page({
           var cloudPath = Date.parse(new Date());
           wx.uploadFile({
             // 指定上传到的云路径
-            url: app.config.host + 'uploadPic.do?fileType=store&openId=' + app.data.openId,
+            url: app.config.host2 + 'uploadPic.do?fileType=store&openId=' + app.data.openId,
             // 指定要上传的文件的小程序临时文件路径
             filePath: res.tempFilePaths[0],
             name: 'file',
@@ -83,7 +84,15 @@ Page({
       })
     }
   },
-  chooseImage2: function (e) {
+  chooseImageEnv: function(e) {
+    if (this.data.storeEnv.length == 3) {
+      wx.showModal({
+        title: '提示',
+        content: '只能上传3张环境图片',
+        showCancel: false
+      })
+      return;
+    }
     if (this.data.envfiles.length == 3) {
       wx.showModal({
         title: '提示',
@@ -97,7 +106,7 @@ Page({
       count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         that.setData({
           envfiles: that.data.envfiles.concat(res.tempFilePaths)
@@ -106,21 +115,21 @@ Page({
         var cloudPath = Date.parse(new Date());
         wx.uploadFile({
           // 指定上传到的云路径
-          url: app.config.host + 'uploadPic.do?fileType=store&openId=' + app.data.openId,
+          url: app.config.host2 + 'uploadPic.do?fileType=store&openId=' + app.data.openId,
           // 指定要上传的文件的小程序临时文件路径
           filePath: res.tempFilePaths[0],
           name: 'file',
           formData: {
             'cloudPath': cloudPath,
-            'fileType': 'push'
           },
           // 成功回调
-          success: function (res) {
+          success: function(res) {
             if (res.statusCode == 200) {
               that.data.storeEnv.push(res.data.replace(/"/g, ""));
+              that.data.storeEnvRecord.push(res.data.replace(/"/g, ""));
             }
           },
-          fail: function (res) {
+          fail: function(res) {
             console.log(res);
           }
         })
@@ -133,9 +142,9 @@ Page({
       urls: this.data.files // 需要预览的图片http链接列表
     })
   },
-  delFile: function() {
+  delFileImg: function() {
     var that = this;
-    if (that.data.storeImg == null || that.data.storeImg == '') {
+    if (that.data.storeImg == null || that.data.storeImg == '' || that.data.storeImg.length == 0) {
       wx.showModal({
         title: '提示',
         content: '还没有上传图片',
@@ -144,7 +153,7 @@ Page({
       return;
     } else {
       wx.request({
-        url: app.config.host + 'delFile.do',
+        url: app.config.host2 + 'delFile.do',
         method: 'GET',
         data: {
           path: that.data.storeImg
@@ -158,7 +167,8 @@ Page({
             })
             that.data.files.splice(that.data.files.length - 1, 1);
             that.setData({
-              files: that.data.files
+              files: that.data.files,
+              storeImg: '',
             })
           } else {
             wx.showToast({
@@ -170,9 +180,9 @@ Page({
       })
     }
   },
-  delFile2: function () {
+  delFileEnv: function() {
     var that = this;
-    var lastStoreEnv = that.data.storeEnv[that.data.storeEnv.length - 1]
+    var lastStoreEnv = that.data.storeEnvRecord[that.data.storeEnvRecord.length - 1]
     if (lastStoreEnv == null || lastStoreEnv == '') {
       wx.showModal({
         title: '提示',
@@ -182,12 +192,12 @@ Page({
       return;
     } else {
       wx.request({
-        url: app.config.host + 'delFile.do',
+        url: app.config.host2 + 'delFile.do',
         method: 'GET',
         data: {
           path: lastStoreEnv
         },
-        success: function (res) {
+        success: function(res) {
           console.log(res.data.data);
           if (res.data.data) {
             wx.showToast({
@@ -196,7 +206,7 @@ Page({
               duration: 2000
             })
             that.data.envfiles.splice(that.data.envfiles.length - 1, 1);
-            that.data.storeEnv.splice(that.data.storeEnv.length - 1, 1);
+            that.data.storeEnvRecord.splice(that.data.storeEnvRecord.length - 1, 1);
             that.setData({
               envfiles: that.data.envfiles
             })
@@ -209,6 +219,59 @@ Page({
         }
       })
     }
+  },
+  delOnlyEnv: function(e) {
+    var that = this;
+    if (that.data.storeEnv.length == 1) {
+      wx.showModal({
+        title: '提示',
+        content: '至少保留一张环境图片，请上传第二张后再删除',
+        showCancel: false
+      })
+      return;
+    }
+    wx.showModal({
+      title: '提示',
+      content: '再次点击将删除此图片',
+      success(res) {
+        if (res.confirm) {
+          for (var i = 0; i < that.data.storeEnv.length; i++) {
+            if (that.data.storeEnv[i] == e.currentTarget.dataset.src) {
+              that.data.storeEnv.splice(i, 1);
+              wx.request({
+                url: app.config.host + 'store/updateStore.do',
+                method: 'POST',
+                data: {
+                  storeEnv: that.data.storeEnv,
+                  id: that.data.id
+                },
+                success: function(res) {
+                  if (res.data.code == 200) {
+                    that.setData({
+                      storeEnv: that.data.storeEnv,
+                    })
+                    wx.request({
+                      url: app.config.host2 + 'delFile.do',
+                      method: 'GET',
+                      data: {
+                        path: e.currentTarget.dataset.src
+                      },
+                      success: function(res) {
+                        wx.showToast({
+                          title: res.data.message,
+                          icon: 'success',
+                          duration: 2000
+                        })
+                      }
+                    })
+                  }
+                }
+              })
+            }
+          }
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -241,9 +304,15 @@ Page({
           storeDesc: res.data.data.storeDesc,
           storeAddress: res.data.data.storeAddress,
           storePhone: res.data.data.storePhone,
+          storeEnv: res.data.data.storeEnv,
           id: res.data.data.id,
           oldStoreImg: res.data.data.storeImg
         })
+        if (res.data.data.storeEnv != null || res.data.data.storeEnv != '') {
+          that.setData({
+            storeEnv: res.data.data.storeEnv,
+          })
+        }
         var radioItems = that.data.radioItems;
         for (var i = 0, len = radioItems.length; i < len; ++i) {
           radioItems[i].checked = radioItems[i].value == res.data.data.storeType;
@@ -307,7 +376,7 @@ Page({
   },
   updateStoreImg: function() {
     var that = this;
-    if (that.data.storeImg == null || that.data.storeImg==''){
+    if (that.data.storeImg == null || that.data.storeImg == '') {
       app.commonModal("提示", "还没有上传图片呢");
       return;
     }
@@ -331,13 +400,36 @@ Page({
       }
     })
   },
-  updateStoreEnv: function(e){
+  updateStoreEnv: function(e) {
     var that = this;
     console.log(that.data.storeEnv)
-    if (that.data.storeEnv.length==0) {
+    if (that.data.storeEnv.length == 0) {
       app.commonModal("提示", "还没有上传图片呢");
       return;
     }
+    wx.request({
+      url: app.config.host + 'store/updateStore.do',
+      method: 'POST',
+      data: {
+        storeEnv: that.data.storeEnv,
+        id: that.data.id
+      },
+      success: function(res) {
+        if (res.data.code == 200) {
+          wx.showToast({
+            title: res.data.message,
+            icon: 'success',
+            duration: 2000
+          })
+          that.setData({
+            storeEnv: that.data.storeEnv,
+            btnFlag3: true,
+            envfiles: [],
+            storeEnvRecord:[]
+          })
+        }
+      }
+    })
   },
   getStoreName: function(e) {
     this.data.storeName = e.detail.value;

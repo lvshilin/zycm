@@ -2,6 +2,10 @@
   "cloud":false,
   "pages":[
     "pages/index/index",
+    "pages/user/myFriends",
+    "pages/push/push",
+    "pages/user/queryCard",
+    "pages/user/card",
     "pages/manager/manager",
     "pages/storeList/storeList",
     "pages/user/myReply",
@@ -11,7 +15,6 @@
     "pages/auth/auth",
     "pages/user/myPush",
     "pages/user/myLike",
-    "pages/push/push",
     "pages/user/mySave",
     "pages/push/newPush",
     "pages/manager/login",

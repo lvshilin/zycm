@@ -1,0 +1,7 @@
+.card-title{
+  background-color: #f1c1b1;
+  color: #e9430d;
+  text-align: center;
+  font-size: 30rpx;
+  height: 100rpx;
+}

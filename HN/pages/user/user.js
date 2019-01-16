@@ -128,6 +128,11 @@ Page({
       console.log('用户拒绝了授权');
     }
   },
+  toMyCard: function(){
+    wx.navigateTo({
+      url: '../../pages/user/card',
+    })
+  },
   toMyPush: function() {
     wx.navigateTo({
       url: '../../pages/user/myPush',
@@ -136,6 +141,11 @@ Page({
   toMyReply: function() {
     wx.navigateTo({
       url: '../../pages/user/myReply',
+    })
+  },
+  toMyFriends: function(){
+    wx.navigateTo({
+      url: '../../pages/user/myFriends',
     })
   },
   toMySave: function() {

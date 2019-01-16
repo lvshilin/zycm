@@ -124,7 +124,6 @@ Page({
           name: 'file',
           formData: {
             'cloudPath': cloudPath,
-            'fileType': 'push'
           },
           // 成功回调
           success: function(res) {

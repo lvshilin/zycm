@@ -76,7 +76,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function() { 
     this.data.openId = app.data.openId;
     var that = this;
     wx.request({
@@ -120,7 +120,21 @@ Page({
       }
     })
   },
-
+  previewImage: function (e) {
+    console.log(e);
+    wx.previewImage({
+      current: e.currentTarget.dataset.url,
+      urls: this.data.storeDetail.storeEnv
+    })
+  },
+  queryWechat: function(){
+     var that = this;
+    if (this.data.storeDetail.storeWechat == null || this.data.storeDetail.storeWechat ==''){
+      app.commonModal("提示","该商家还没有填写联系微信")
+    }else{
+      app.commonModal("查看成功", "微信号：" + this.data.storeDetail.storeWechat)
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

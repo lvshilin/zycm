@@ -27,7 +27,7 @@
   </view>
 </view>
 <view style='margin:2%;height:auto; width:96%;'>
-  <button class="user-menu">
+  <button class="user-menu" bindtap='toMyCard'>
     <view style='width:15%;text-align: center;'>
       <image class="user-menu-img" src='../../pic/user/mingpian.png'></image>
     </view>
@@ -49,6 +49,15 @@
   </button>
 </view>
 <view style='margin:2%;height:auto; width:96%; border:1rpx solid #e6e6e6;'>
+  <view class="user-menu" bindtap='toMyFriends'>
+    <view style='width:15%;text-align: center;'>
+      <image class="user-menu-img" src='../../pic/user/friends.png'></image> 
+    </view>
+    <view class="user-menu-text">我关注的名片</view>
+    <view style='width:15%;'>
+      <image class="user-menu-more" src='../../pic/user/more.png'></image>
+    </view>
+  </view>
   <view class="user-menu" bindtap='toMyPush'>
     <view style='width:15%;text-align: center;'>
       <image class="user-menu-img" src='../../pic/user/fatie.png'></image>

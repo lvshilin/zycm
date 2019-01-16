@@ -1,4 +1,4 @@
-<view style='margin:2%;height:auto; width:96%; border:1rpx solid #e6e6e6;'>
+<view style='margin:2%;height:auto; width:96%; border:1rpx solid #e6e6e6;' wx:if="{{replyPushList.length>0}}">
   <view class="my-reply-div" wx:for="{{replyPushList}}">
     <view class='my-reply-item' data-id='{{item.id}}' bindtap='pushDetailPage'>
       <view class='my-reply-title'>
@@ -10,4 +10,7 @@
       <image bindtap='delMyReply' data-id='{{item.id}}' data-pushid='{{item.pushId}}' src='../../pic/shanchu.png'></image>
     </view>
   </view>
+</view>
+<view  wx:else>
+<image style='width:100%;' src="../../pic/kong.jpg"></image>
 </view>

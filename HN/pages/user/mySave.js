@@ -32,9 +32,9 @@ Page({
                 icon: 'success',
                 duration: 2000
               })
+            that.loadDataList();
             }
           })
-          that.loadDataList();
         } else if (res.cancel) {
           console.log('用户点击取消')
         }

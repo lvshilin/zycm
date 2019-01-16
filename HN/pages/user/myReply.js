@@ -9,7 +9,7 @@ Page({
   loadDataList: function () {
     var that = this;
     wx.request({
-      url: app.config.local + 'push/queryPushReplyByOpenId.do',
+      url: app.config.host + 'push/queryPushReplyByOpenId.do',
       method: 'POST',
       data: {
         openId: app.data.openId,
@@ -31,7 +31,7 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: app.config.local + 'push/delPushReplyById.do',
+            url: app.config.host + 'push/delPushReplyById.do',
             method: 'POST',
             data: {
               id: e.currentTarget.dataset.id,

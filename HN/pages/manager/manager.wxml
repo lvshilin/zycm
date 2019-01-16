@@ -74,11 +74,11 @@
               </view>
             </block>
             <view class="weui-uploader__file">
-              <image bindtap='delFile' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
+              <image bindtap='delFileImg' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
             </view>
           </view>
           <view class="weui-uploader__input-box">
-            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            <view class="weui-uploader__input" bindtap="chooseImageImg"></view>
           </view>
         </view>
       </view>
@@ -98,9 +98,7 @@
   </view>
 
   <view class='oldStoreImgDiv'>
-    <image style='width:30%;height:200rpx;padding: 2rpx;' src='{{oldStoreImg}}'></image>
-    <image style='width:30%;height:200rpx;padding: 2rpx;' src='{{oldStoreImg}}'></image>
-    <image style='width:30%;height:200rpx;padding: 2rpx;' src='{{oldStoreImg}}'></image>
+    <image style='width:30%;height:200rpx;padding: 2rpx;' wx:for='{{storeEnv}}' bindtap='delOnlyEnv' data-src='{{item}}' src='{{item}}'></image>
   </view>
 
   <view class="weui-cell" style='margin-top:5rpx;'>
@@ -114,11 +112,11 @@
               </view>
             </block>
             <view class="weui-uploader__file">
-              <image bindtap='delFile2' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
+              <image bindtap='delFileEnv' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
             </view>
           </view>
           <view class="weui-uploader__input-box">
-            <view class="weui-uploader__input" bindtap="chooseImage2"></view>
+            <view class="weui-uploader__input" bindtap="chooseImageEnv"></view>
           </view>
         </view>
       </view>

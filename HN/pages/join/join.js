@@ -14,7 +14,11 @@ Page({
     storeDesc:'',
     storePhone:'',
     storeAddress:'',
+    storeWechat:'',
     files: [],
+    envfiles:[],
+    storeEnv:[],
+    storeEnvRecord:[],
     storeImg:null
   },
   radioChange: function (e) {
@@ -39,6 +43,9 @@ Page({
   getStoreAddress: function (e) {
     this.data.storeAddress = e.detail.value;
   },
+  getStoreWechat: function(e){
+    this.data.storeWechat = e.detail.value;
+  },
   commitStore: function(){
     var that = this;
     if (that.data.storeName == '' || that.data.storeName == null){
@@ -50,7 +57,11 @@ Page({
       return;
     }
     if (that.data.storeImg == '' || that.data.storeImg == null) {
-      app.commonModal("提示", "请上传店铺头像");
+      app.commonModal("提示", "请上传店铺封面图片");
+      return;
+    }
+    if (that.data.storeEnv.length==0) {
+      app.commonModal("提示", "请上传店铺环境图片");
       return;
     }
     if (that.data.storePhone == '' || that.data.storePhone == null) {
@@ -74,6 +85,8 @@ Page({
               storeType: that.data.storeType,
               storeDesc: that.data.storeDesc,
               storeImg: that.data.storeImg,
+              storeEnv: that.data.storeEnv,
+              storeWechat: that.data.storeWechat,
               storePhone: that.data.storePhone,
               storeAddress: that.data.storeAddress,
               openId: app.data.openId
@@ -97,7 +110,7 @@ Page({
       }
     })
   },
-  chooseImage: function (e) {
+  chooseImageImg: function (e) {
     if (this.data.files.length==1){
       wx.showModal({
         title: '提示',
@@ -120,7 +133,7 @@ Page({
           var cloudPath = Date.parse(new Date());
           wx.uploadFile({
             // 指定上传到的云路径
-            url: app.config.host + 'uploadPic.do?fileType=store&openId=' + app.data.openId,
+            url: app.config.host2 + 'uploadPic.do?fileType=store&openId=' + app.data.openId,
             // 指定要上传的文件的小程序临时文件路径
             filePath: res.tempFilePaths[0],
             name: 'file',
@@ -140,13 +153,57 @@ Page({
       })
     }
   },
+  chooseImageEnv: function (e) {
+    if (this.data.envfiles.length == 3) {
+      wx.showModal({
+        title: '提示',
+        content: '只能上传3张环境图片',
+        showCancel: false
+      })
+      return;
+    }
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        that.setData({
+          envfiles: that.data.envfiles.concat(res.tempFilePaths)
+        });
+        var filePath = res.tempFilePaths[0];
+        var cloudPath = Date.parse(new Date());
+        wx.uploadFile({
+          // 指定上传到的云路径
+          url: app.config.host2 + 'uploadPic.do?fileType=store&openId=' + app.data.openId,
+          // 指定要上传的文件的小程序临时文件路径
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          formData: {
+            'cloudPath': cloudPath,
+          },
+          // 成功回调
+          success: function (res) {
+            if (res.statusCode == 200) {
+              that.data.storeEnv.push(res.data.replace(/"/g, ""));
+              that.data.storeEnvRecord.push(res.data.replace(/"/g, ""));
+            }
+          },
+          fail: function (res) {
+            console.log(res);
+          }
+        })
+      }
+    })
+  },
   previewImage: function (e) {
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
       urls: this.data.files // 需要预览的图片http链接列表
     })
   },
-  delFile: function(){
+  delFileImg: function(){
     var that = this;
     if (that.data.storeImg == null || that.data.storeImg==''){
       wx.showModal({
@@ -174,6 +231,46 @@ Page({
               files: that.data.files
             })
           }else{
+            wx.showToast({
+              title: res.data.message,
+              duration: 2000
+            })
+          }
+        }
+      })
+    }
+  },
+  delFileEnv: function () {
+    var that = this;
+    var lastStoreEnv = that.data.storeEnvRecord[that.data.storeEnvRecord.length - 1]
+    if (lastStoreEnv == null || lastStoreEnv == '') {
+      wx.showModal({
+        title: '提示',
+        content: '还没有上传图片',
+        showCancel: false
+      })
+      return;
+    } else {
+      wx.request({
+        url: app.config.host2 + 'delFile.do',
+        method: 'GET',
+        data: {
+          path: lastStoreEnv
+        },
+        success: function (res) {
+          if (res.data.data) {
+            wx.showToast({
+              title: res.data.message,
+              icon: 'success',
+              duration: 2000
+            })
+            that.data.envfiles.splice(that.data.envfiles.length - 1, 1);
+            that.data.storeEnv.splice(that.data.storeEnv.length - 1, 1);
+            that.data.storeEnvRecord.splice(that.data.storeEnvRecord.length - 1, 1);
+            that.setData({
+              envfiles: that.data.envfiles
+            })
+          } else {
             wx.showToast({
               title: res.data.message,
               duration: 2000

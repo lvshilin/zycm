@@ -1,0 +1,48 @@
+<view class="card-title">
+ <view style='padding:10rpx;'>完善个人名片，让别人更快的找到你</view>
+</view>
+<view class='cardDiv'>
+  <view style='width:25%;'><image class='cardImg' src='{{userCard.avatarUrl}}'></image></view>
+  <view class='cardDetail'>
+    <view style='font-family:STLiti;'>{{userCard.name}}</view>
+    <view class='cardDetailText'>职位:{{userCard.position}}</view>
+    <view class='cardDetailText'>场所:{{userCard.company}}</view>
+  </view> 
+  <view style='width:25%;'>
+  <image class='cardImg' data-isdel='0' bindtap='addFriend' wx:if='{{isDel==1}}' src='../../pic/card/weiguanzhu.png'></image>
+  <image class='cardImg' data-isdel='1' bindtap='addFriend' wx:else src='../../pic/card/yiguanzhu.png'></image>
+  </view>
+</view>
+<view class='cardDetailCont' wx:if="{{userCard.isContact==1}}">联系电话:{{userCard.phone}}</view>
+<view class='cardDetailCont' wx:elif="{{userCard.isContact==0}}">联系电话:对方已隐藏</view>
+<view class='cardDetailCont' wx:else>联系电话:对方未填写</view>
+<view class='cardDetailCont' wx:if="{{userCard.isContact==1}}">联系微信:{{userCard.wechat}}</view>
+<view class='cardDetailCont'  wx:elif="{{userCard.isContact==0}}">联系微信:对方已隐藏</view>
+<view class='cardDetailCont' wx:else>联系微信:对方未填写</view>
+<view class='cardDetailCont'>负责业务:{{userCard.working}}</view>
+
+<view class="card-title">
+ <view style='padding:10rpx;'>Ta的动态</view>
+</view>
+<view wx:if="{{pushList.length>0}}">
+  <view class="push-item" data-id='{{item.id}}' bindtap='pushDetailPage' hover-class="weui-cell_active" wx:for="{{pushList}}">
+    <view class='push-img' wx:if="{{item.isHide=='0'}}">
+      <image class='pushImg'  src='{{item.avatarUrl}}'></image>
+    </view>
+    <view class='push-img' wx:else>
+      <image class='pushImg' src='../../pic/push/niming.png'></image>
+    </view>
+    <view class='push-detail'>
+      <view class='push-title'>
+        <text style='color:red;'>{{item.dictText}}#</text>{{item.pushTitle}}</view>
+      <view class='push-text'>{{item.pushDetail}}</view>
+      <view class="push-num">{{item.createTimeStr}}
+        <text decode="{{true}}" space="{{true}}" class='push-huifu'>&nbsp;{{item.replyNum}}评论&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}" class='push-zhiding' wx:if="{{item.isTop=='1'}}">&nbsp;精&nbsp;</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view  wx:else>
+<image style='width:100%;' src="../../pic/kong.jpg"></image>
+</view>

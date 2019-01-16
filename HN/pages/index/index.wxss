@@ -39,3 +39,51 @@
   width: 81rpx;
   height: 81rpx;
 }
+.cardList{
+  margin:2%;
+  height:200rpx;
+  width:96%;
+  border:1rpx solid #e6e6e6;
+  border-radius: 25rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cardIndex{
+  width: 15%;
+  text-align: center;
+  font-size: 70rpx;
+  font-style:italic;
+  color: #e05013;
+}
+.cardImg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+.cardDetail{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+.cardDetailText{
+  font-family: "华文隶书";
+  color: gray;
+  font-size:25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.cardDetailWorking{
+  width: 28%;
+  font-family: "华文隶书";
+  color: gray;
+  font-size:25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}

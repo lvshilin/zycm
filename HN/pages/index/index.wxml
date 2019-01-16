@@ -33,7 +33,20 @@
 <view class='menuDiv'>
   <text selectable='true' style='margin-top:10rpx;margin-left:25rpx;color: #e05013;font-size:25rpx;'>最新公告：发表内容切勿有关政治，色情，赌博等相关违法内容</text>
 </view>
-
+<image style='width:100%;height:200rpx;' src='../../pic/index/card.jpg'></image>
+<view class='cardList' wx:for="{{cardList}}" data-openid='{{item.openId}}' bindtap='queryUserCard'>
+  <view class='cardIndex'>{{index+1}}.</view>
+   <view style='width:20%;'><image class='cardImg' src='{{item.avatarUrl}}'></image></view>
+  <view class='cardDetail'>
+    <view style='font-family:华文隶书;'>{{item.name}}</view>
+    <view class='cardDetailText'>职位:{{item.position}}</view>
+    <view class='cardDetailText'>场所:{{item.company}}</view>
+  </view>
+   <view class='cardDetailWorking'>
+    {{item.working}}
+  </view>
+  <view style='width:2%;'></view>
+</view>
 <view class="weui-footer">
   <view class="weui-footer__links">
     <view  class="weui-footer__link">周瑜网络传媒</view>

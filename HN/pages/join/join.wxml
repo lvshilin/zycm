@@ -27,6 +27,15 @@
     </view>
   </view>
 
+   <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">联系微信</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" bindinput='getStoreWechat' placeholder="请输入联系微信(非必填)" />
+    </view>
+  </view>
+
   <view class="weui-cells weui-cells_after-title">
     <radio-group bindchange="radioChange">
       <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
@@ -55,7 +64,7 @@
     <view class="weui-cell__bd">
       <view class="weui-uploader">
         <view class="weui-uploader__hd">
-          <view class="weui-uploader__title">图片上传(可选)</view>
+          <view class="weui-uploader__title">店面封面上传(必选*单张)</view>
         </view>
         <view class="weui-uploader__bd">
           <view class="weui-uploader__files" id="uploaderFiles">
@@ -65,11 +74,39 @@
               </view>
             </block>
             <view class="weui-uploader__file">
-              <image bindtap='delFile' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
+              <image bindtap='delFileImg' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
             </view>
           </view>
           <view class="weui-uploader__input-box">
-            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            <view class="weui-uploader__input" bindtap="chooseImageImg"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="weui-cells">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__hd">
+          <view class="weui-uploader__title">店面环境上传(必选*最多三张)</view>
+        </view>
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{envfiles}}" wx:key="*this">
+              <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+              </view>
+            </block>
+            <view class="weui-uploader__file">
+              <image bindtap='delFileEnv' class="weui-uploader__img" src="../../pic/push/delpic.png" mode="aspectFill" />
+            </view>
+          </view>
+          <view class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImageEnv"></view>
           </view>
         </view>
       </view>

@@ -10,7 +10,8 @@ Page({
     ],
     openId: '',
     userCountNum: '0',
-    pushCountNum: '0'
+    pushCountNum: '0',
+    cardList:[],
   },
   queryType: function(e) {
     console.log(e.currentTarget.dataset.type);
@@ -18,6 +19,11 @@ Page({
   postDetail: function(e) {
     wx.navigateTo({
       url: '../../pages/postDetail/postDetail',
+    })
+  },
+  queryUserCard: function (e) {
+    wx.navigateTo({
+      url: '../../pages/user/queryCard?openId=' + e.currentTarget.dataset.openid,
     })
   },
   onLoad: function() {
@@ -39,8 +45,18 @@ Page({
     })
   },
   onShow: function() {
+    var that = this;
     this.data.openId = app.data.openId;
     this.loadCountData();
+    wx.request({
+      url: app.config.host + 'user/queryUserCardList.do',
+      method: 'GET',
+      success: function(res){
+        that.setData({
+          cardList:res.data.data
+        })
+      }
+    })
   },
   loadCountData: function() {
     var that = this;
